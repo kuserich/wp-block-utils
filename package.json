@@ -1,0 +1,19 @@
+{
+  "name": "sixa-wp-block-utils",
+  "version": "1.0.0",
+  "description": "A library of useful functions and components to be used across all sixa WordPress blocks.",
+  "main": "build/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sixach/sixa-wp-block-utils.git"
+  },
+  "author": "sixa AG",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/sixach/sixa-wp-block-utils/issues"
+  },
+  "homepage": "https://github.com/sixach/sixa-wp-block-utils#readme"
+}
