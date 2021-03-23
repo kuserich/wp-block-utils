@@ -1,3 +1,3 @@
-const PREFIX = 'sixa-wp-blocks';
+const PREFIX = 'sixa';
 
 export default PREFIX;
