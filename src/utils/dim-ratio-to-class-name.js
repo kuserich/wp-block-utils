@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { isEqual, multiply, divide, round } from 'lodash';
+import { isEqual, multiply, divide, round } from 'lodash-es';
 
 const dimRatioToClassName = ( ratio ) =>
 	isEqual( ratio, 0 ) || isEqual( ratio, 50 ) || ! ratio

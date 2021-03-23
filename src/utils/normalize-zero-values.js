@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { gt, replace, pickBy } from 'lodash';
+import { gt, replace, pickBy } from 'lodash-es';
 
 const normalizeZeroValues = ( styles ) => pickBy( styles, ( style ) => gt( replace( style, /\D/g, '' ), 0 ) );
 

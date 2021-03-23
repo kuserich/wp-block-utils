@@ -2,7 +2,7 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import { isPlainObject, upperFirst } from 'lodash';
+import { isPlainObject, upperFirst } from 'lodash-es';
 import normalizeZeroValues from './normalize-zero-values';
 
 const normalizeSpacingStyles = ( spacing, type ) =>
