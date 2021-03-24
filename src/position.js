@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { get, isEqual } from 'lodash';
+import { get, isEqual } from 'lodash-es';
 import { POSITION_CLASSNAMES } from './constants';
 
 /**
@@ -11,7 +11,11 @@ import { POSITION_CLASSNAMES } from './constants';
  * @return {boolean} 			        Return true if content is center positioned.
  */
 const isPositionCenter = ( position ) => {
-	return ! position || isEqual( position, 'center center' ) || isEqual( position, 'center' );
+	return (
+		! position ||
+		isEqual( position, 'center center' ) ||
+		isEqual( position, 'center' )
+	);
 };
 
 /**

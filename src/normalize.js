@@ -2,7 +2,18 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import { gt, get, replace, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst } from 'lodash-es';
+import {
+	gt,
+	get,
+	replace,
+	pickBy,
+	isEqual,
+	multiply,
+	divide,
+	round,
+	isPlainObject,
+	upperFirst,
+} from 'lodash-es';
 
 /**
  * Generate dim CSS class name based on given ratio or opacity.
@@ -13,7 +24,10 @@ import { gt, get, replace, pickBy, isEqual, multiply, divide, round, isPlainObje
 const normalizeDimRatio = ( ratio ) =>
 	isEqual( ratio, 0 ) || isEqual( ratio, 50 ) || ! ratio
 		? null
-		: `has-background-dim-${ multiply( 10, round( divide( ratio, 10 ) ) ) }`;
+		: `has-background-dim-${ multiply(
+				10,
+				round( divide( ratio, 10 ) )
+		  ) }`;
 
 /**
  * Generates corresponding CSS based on the given focal point picker value.
@@ -22,7 +36,9 @@ const normalizeDimRatio = ( ratio ) =>
  * @return {string} 			Calculated X and Y position based on the focalpoint object given.
  */
 const normalizeFocalPointPosition = ( focalPoint ) =>
-	`${ round( multiply( get( focalPoint, 'x' ), 100 ) ) }% ${ round( multiply( get( focalPoint, 'y' ), 100 ) ) }%`;
+	`${ round( multiply( get( focalPoint, 'x' ), 100 ) ) }% ${ round(
+		multiply( get( focalPoint, 'y' ), 100 )
+	) }%`;
 
 /**
  * Generate inline background-image CSS style based on given URL.
@@ -30,7 +46,8 @@ const normalizeFocalPointPosition = ( focalPoint ) =>
  * @param  {string} url 		Background image URL or web address.
  * @return {Object} 			CSS style for the given background-image address.
  */
-const normalizeBackgroundUrl = ( url ) => ( url ? { backgroundImage: `url(${ url })` } : {} );
+const normalizeBackgroundUrl = ( url ) =>
+	url ? { backgroundImage: `url(${ url })` } : {};
 
 /**
  * Remove zero unit values from given list of inline style object.
@@ -38,7 +55,8 @@ const normalizeBackgroundUrl = ( url ) => ( url ? { backgroundImage: `url(${ url
  * @param  {Object} styles 	    Spacing CSS styles.
  * @return {Object} 			Spacing CSS styles without zero or false values.
  */
-const normalizeZeroStyles = ( styles ) => pickBy( styles, ( style ) => gt( replace( style, /\D/g, '' ), 0 ) );
+const normalizeZeroStyles = ( styles ) =>
+	pickBy( styles, ( style ) => gt( replace( style, /\D/g, '' ), 0 ) );
 
 /**
  * Normalize padding and margin inline styles with removing falsy values.
@@ -49,7 +67,12 @@ const normalizeZeroStyles = ( styles ) => pickBy( styles, ( style ) => gt( repla
  */
 const normalizeSpacingStyles = ( spacing, type ) =>
 	isPlainObject( spacing )
-		? normalizeZeroStyles( renameKeys( spacing, ( key ) => `${ type }${ upperFirst( key ) }` ) )
+		? normalizeZeroStyles(
+				renameKeys(
+					spacing,
+					( key ) => `${ type }${ upperFirst( key ) }`
+				)
+		  )
 		: {};
 
 export {
