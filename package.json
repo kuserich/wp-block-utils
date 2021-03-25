@@ -1,6 +1,6 @@
 {
   "name": "@sixa/wp-block-utils",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "A library of useful functions and components to be used across all sixa WordPress blocks.",
   "main": "dist/index.js",
   "browser": "dist/wp-block-utils.min.js",
@@ -8,7 +8,11 @@
   "unpkg": "dist/wp-block-utils.min.js",
   "style": "dist/wp-block-utils.min.css",
   "scripts": {
-    "build": "rollup -c",
+    "build": "npm run build:js && npm run build:css",
+    "build:js": "rollup -c",
+    "build:css": "postcss --config ./postcss.config.js src/**/*.css -d dist",
+    "lint:css": "./node_modules/stylelint/bin/stylelint.js \"src/**/*.css\"",
+    "lint:css-fix": "./node_modules/stylelint/bin/stylelint.js \"src/**/*.css\" --fix",
     "lint:js": "./node_modules/eslint/bin/eslint.js src",
     "lint:js-fix": "./node_modules/eslint/bin/eslint.js src --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -22,8 +26,19 @@
   "bugs": {
     "url": "https://github.com/sixach/sixa-wp-block-utils/issues"
   },
+  "keywords": [
+    "sixa",
+    "block",
+    "sixa blocks",
+    "wordpress",
+    "wordpress gutenberg",
+    "gutenberg block",
+    "wordpress gutenberg block",
+    "utilities"
+  ],
   "homepage": "https://github.com/sixach/sixa-wp-block-utils#readme",
   "dependencies": {
+    "classnames": "^2.2.6",
     "lodash-es": "^4.17.21",
     "rename-keys": "^2.0.1"
   },
@@ -37,12 +52,45 @@
     "@rollup/plugin-node-resolve": "^11.2.0",
     "@rollup/plugin-replace": "^2.4.1",
     "@wordpress/eslint-plugin": "^9.0.1",
+    "@wordpress/stylelint-config": "^19.0.1",
     "eslint": "^7.22.0",
     "husky": "^4.3.8",
+    "postcss": "^7.0.35",
+    "postcss-calc": "^7.0.2",
+    "postcss-cli": "^7.1.2",
+    "postcss-combine-duplicated-selectors": "^9.1.0",
+    "postcss-combine-media-query": "^1.0.1",
+    "postcss-custom-media": "^7.0.8",
+    "postcss-custom-selectors": "^5.1.2",
+    "postcss-discard-empty": "^4.0.1",
+    "postcss-each": "^0.10.0",
+    "postcss-extend": "^1.0.5",
+    "postcss-flexbox": "^1.0.3",
+    "postcss-for": "^2.1.1",
+    "postcss-hidden": "^1.0.7",
+    "postcss-if-media": "^1.0.3",
+    "postcss-import": "^12.0.1",
+    "postcss-important-startstop": "^2.0.0",
+    "postcss-input-range": "^4.0.0",
+    "postcss-loader": "3.0.0",
+    "postcss-mixins": "^6.2.3",
+    "postcss-nested": "^4.2.1",
+    "postcss-nested-ancestors": "^2.0.0",
+    "postcss-position": "^1.1.0",
+    "postcss-quantity-queries": "^0.5.0",
+    "postcss-selector-not": "^4.0.1",
+    "postcss-selector-replace": "^1.0.2",
+    "postcss-short-border-radius": "^3.0.0",
+    "postcss-size": "^3.0.0",
+    "postcss-start-to-end": "^1.0.1",
+    "postcss-transform-shortcut": "^2.0.1",
+    "postcss-url": "^9.0.0",
+    "postcss-variables-prefixer": "0.0.0-beta.0",
     "rollup": "^2.42.3",
     "rollup-plugin-filesize": "^9.1.1",
     "rollup-plugin-local-resolve": "^1.0.7",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-terser": "^7.0.2"
+    "rollup-plugin-terser": "^7.0.2",
+    "stylelint": "^13.12.0"
   }
 }

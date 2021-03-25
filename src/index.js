@@ -1,5 +1,6 @@
-export { spacingAttrs, visibilityAttrs } from './attributes';
+export { spacingAttrs } from './attributes';
 export { blockName, blockClassName } from './block-meta';
+export { LoadingSpinner } from './components';
 export {
 	AUTHOR,
 	PREFIX,
@@ -16,3 +17,4 @@ export {
 	normalizeSpacingStyles,
 } from './normalize';
 export { isPositionCenter, positionToClassName } from './position';
+export { visibilityClassNames, visibilityAttrs, VisibilityToolbar } from './visibility';

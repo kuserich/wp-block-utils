@@ -11,6 +11,7 @@ import pkg from "./package.json";
 const globals = {
     "lodash-es": "lodash-es",
     "rename-keys": "index",
+    classnames: "classnames",
 };
 
 const config = {
