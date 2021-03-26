@@ -4,8 +4,22 @@
 @custom-media --widescreen-only (min-width: 1152px) and (max-width: 1343px);
 @custom-media --ultra-widescreen-only (min-width: 1344px);
 
-@each $item in widescreen, desktop, tablet, mobile {
-	.hide-$(item) {
-		display: none ?if media (--$(item)-only);
-	}
+.hide-mobile {
+	display: none ?if media mobile-only;
+}
+
+.hide-tablet {
+	display: none ?if media --tablet-only;
+}
+
+.hide-desktop {
+	display: none ?if media --desktop-only;
+}
+
+.hide-widescreen {
+	display: none ?if media --widescreen-only;
+}
+
+.hide-ultra-widescreen {
+	display: none ?if media --ultra-widescreen-only;
 }
