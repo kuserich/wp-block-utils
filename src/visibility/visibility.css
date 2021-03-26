@@ -5,10 +5,7 @@
 @custom-media --ultra-widescreen-only (min-width: 1344px);
 
 @each $item in widescreen, desktop, tablet, mobile {
-
-	@media (--$(item)-only) {
-		.hide-$(item) {
-			display: none;
-		}
+	.hide-$(item) {
+		display: none ?if media (--$(item)-only);
 	}
 }

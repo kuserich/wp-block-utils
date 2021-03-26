@@ -15,22 +15,22 @@ const { _x } = wp.i18n;
  */
 const visibilityAttrs = () => ( {
     desktop: {
-        label: _x( 'Desktop', 'visibility label', 'sixa-extras' ),
+        label: _x( 'Desktop', 'visibility label', 'sixa' ),
         className: 'widescreen',
         value: false,
     },
     laptop: {
-        label: _x( 'Laptop', 'visibility label', 'sixa-extras' ),
+        label: _x( 'Laptop', 'visibility label', 'sixa' ),
         className: 'desktop',
         value: false,
     },
     tablet: {
-        label: _x( 'Tablet', 'visibility label', 'sixa-extras' ),
+        label: _x( 'Tablet', 'visibility label', 'sixa' ),
         className: 'tablet',
         value: false,
     },
     smartphone: {
-        label: _x( 'Smartphone', 'visibility label', 'sixa-extras' ),
+        label: _x( 'Smartphone', 'visibility label', 'sixa' ),
         className: 'mobile',
         value: false,
     },
@@ -68,7 +68,7 @@ const VisibilityToolbar = ( props ) => {
                 icon: <Dashicon icon={ key } />,
                 title: sprintf(
                     /* translators: %s: Device name. */
-                    _x( 'Hide on %s?', 'visibility toolbar title', 'sixa-extras' ),
+                    _x( 'Hide on %s?', 'visibility toolbar title', 'sixa' ),
                     lowerCase( get( attributes, `${ key }.label` ) )
                 ),
                 onClick: () => onChange( key, value ),
