@@ -7,6 +7,7 @@ import { eq, get, join, trim, forOwn, lowerCase, map } from 'lodash-es';/**
  * WordPress dependencies
  */
 const { _x } = wp.i18n;
+const { ToolbarGroup, Dashicon } = wp.components;
 
 /**
  * Returns a list of visibility breakpoint attributes.
