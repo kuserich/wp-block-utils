@@ -11,11 +11,7 @@ import { POSITION_CLASSNAMES } from './constants';
  * @return {boolean} 			        Return true if content is center positioned.
  */
 const isPositionCenter = ( position ) => {
-	return (
-		! position ||
-		isEqual( position, 'center center' ) ||
-		isEqual( position, 'center' )
-	);
+	return ! position || isEqual( position, 'center center' ) || isEqual( position, 'center' );
 };
 
 /**

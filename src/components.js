@@ -6,14 +6,16 @@ const { Spinner } = wp.components;
 
 /**
  * A simple component to notify users that their action is being processed.
+ *
+ * @param {string} label Label shown above spinner.
  */
 const LoadingSpinner = ( { label } ) => (
-    <>
-        <p>
-            { label || __( 'Fetching…', 'sixa' ) }
-            <Spinner />
-        </p>
-    </>
+	<>
+		<p>
+			{ label || __( 'Fetching…', 'sixa' ) }
+			<Spinner />
+		</p>
+	</>
 );
 
 export { LoadingSpinner };
