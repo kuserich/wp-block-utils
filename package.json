@@ -1,92 +1,92 @@
 {
-  "name": "@sixa/wp-block-utils",
-  "version": "0.3.2",
-  "description": "A library of useful functions and components to be used across all sixa WordPress blocks.",
-  "main": "dist/index.js",
-  "browser": "dist/wp-block-utils.min.js",
-  "module": "dist/es/index.js",
-  "unpkg": "dist/wp-block-utils.min.js",
-  "style": "dist/wp-block-utils.min.css",
-  "scripts": {
-    "build": "npm run build:js && npm run build:css",
-    "build:js": "rollup -c",
-    "build:css": "postcss --config ./postcss.config.js src/**/*.css -d dist",
-    "lint:css": "stylelint 'src/**/*.css'",
-    "lint:css-fix": "stylelint 'src/**/*.css' --fix",
-    "lint:js": "eslint src/ --ext=js,jsx",
-    "lint:js-fix": "eslint src/ --ext=js,jsx --fix",
-    "format:js": "prettier --ignore-path .eslintignore --write \"**/*.{js,jsx,json,ts,tsx}\""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/sixach/sixa-wp-block-utils.git"
-  },
-  "author": "sixa AG",
-  "license": "GPL-3.0-or-later",
-  "bugs": {
-    "url": "https://github.com/sixach/sixa-wp-block-utils/issues"
-  },
-  "keywords": [
-    "sixa",
-    "block",
-    "sixa blocks",
-    "wordpress",
-    "wordpress gutenberg",
-    "gutenberg block",
-    "wordpress gutenberg block",
-    "utilities"
-  ],
-  "homepage": "https://github.com/sixach/sixa-wp-block-utils#readme",
-  "dependencies": {
-    "classnames": "^2.2.6",
-    "lodash-es": "^4.17.21",
-    "rename-keys": "^2.0.1"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.12.1",
-    "@babel/plugin-proposal-object-rest-spread": "^7.12.1",
-    "@babel/preset-env": "^7.13.12",
-    "@babel/preset-react": "^7.12.13",
-    "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^17.1.0",
-    "@rollup/plugin-node-resolve": "^11.2.0",
-    "@rollup/plugin-replace": "^2.4.1",
-    "@wordpress/babel-preset-default": "^5.1.0",
-    "@wordpress/browserslist-config": "^3.0.1",
-    "@wordpress/eslint-plugin": "^9.0.1",
-    "@wordpress/npm-package-json-lint-config": "^4.0.1",
-    "@wordpress/postcss-plugins-preset": "^2.1.0",
-    "@wordpress/prettier-config": "^1.0.1",
-    "@wordpress/stylelint-config": "^19.0.1",
-    "autoprefixer": "^10.2.5",
-    "eslint": "^7.22.0",
-    "husky": "^4.3.8",
-    "lint-staged": "^10.5.4",
-    "postcss": "^8.2.8",
-    "postcss-cli": "^8.3.1",
-    "postcss-custom-media": "^8.0.0",
-    "postcss-discard-empty": "^4.0.1",
-    "postcss-if-media": "^1.0.3",
-    "rollup": "^2.42.3",
-    "rollup-plugin-filesize": "^9.1.1",
-    "rollup-plugin-local-resolve": "^1.0.7",
-    "rollup-plugin-peer-deps-external": "^2.2.4",
-    "rollup-plugin-postcss": "^4.0.0",
-    "rollup-plugin-terser": "^7.0.2",
-    "stylelint": "^13.12.0"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.css": [
-      "npm run lint:css"
-    ],
-    "*.{js,ts,tsx}": [
-      "npm run lint:js",
-      "npm run format:js"
-    ]
-  }
+	"name": "@sixa/wp-block-utils",
+	"version": "0.3.4",
+	"description": "A library of useful functions and components to be used across all sixa WordPress blocks.",
+	"main": "dist/index.js",
+	"browser": "dist/wp-block-utils.min.js",
+	"module": "dist/es/index.js",
+	"unpkg": "dist/wp-block-utils.min.js",
+	"style": "dist/wp-block-utils.min.css",
+	"scripts": {
+		"build": "npm run build:js && npm run build:css",
+		"build:js": "rollup -c",
+		"build:css": "postcss --config ./postcss.config.js src/**/*.css -d dist",
+		"lint:css": "stylelint 'src/**/*.css'",
+		"lint:css-fix": "stylelint 'src/**/*.css' --fix",
+		"lint:js": "eslint src/ --ext=js,jsx",
+		"lint:js-fix": "eslint src/ --ext=js,jsx --fix",
+		"format:js": "prettier --ignore-path .eslintignore --write \"**/*.{js,jsx,json,ts,tsx}\""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/sixach/sixa-wp-block-utils.git"
+	},
+	"author": "sixa AG",
+	"license": "GPL-3.0-or-later",
+	"bugs": {
+		"url": "https://github.com/sixach/sixa-wp-block-utils/issues"
+	},
+	"keywords": [
+		"sixa",
+		"block",
+		"sixa blocks",
+		"wordpress",
+		"wordpress gutenberg",
+		"gutenberg block",
+		"wordpress gutenberg block",
+		"utilities"
+	],
+	"homepage": "https://github.com/sixach/sixa-wp-block-utils#readme",
+	"dependencies": {
+		"classnames": "^2.2.6",
+		"lodash-es": "^4.17.21",
+		"rename-keys": "^2.0.1"
+	},
+	"devDependencies": {
+		"@babel/plugin-proposal-class-properties": "^7.12.1",
+		"@babel/plugin-proposal-object-rest-spread": "^7.12.1",
+		"@babel/preset-env": "^7.13.12",
+		"@babel/preset-react": "^7.12.13",
+		"@rollup/plugin-babel": "^5.3.0",
+		"@rollup/plugin-commonjs": "^17.1.0",
+		"@rollup/plugin-node-resolve": "^11.2.0",
+		"@rollup/plugin-replace": "^2.4.1",
+		"@wordpress/babel-preset-default": "^5.1.0",
+		"@wordpress/browserslist-config": "^3.0.1",
+		"@wordpress/eslint-plugin": "^9.0.1",
+		"@wordpress/npm-package-json-lint-config": "^4.0.1",
+		"@wordpress/postcss-plugins-preset": "^2.1.0",
+		"@wordpress/prettier-config": "^1.0.1",
+		"@wordpress/stylelint-config": "^19.0.1",
+		"autoprefixer": "^10.2.5",
+		"eslint": "^7.22.0",
+		"husky": "^4.3.8",
+		"lint-staged": "^10.5.4",
+		"postcss": "^8.2.8",
+		"postcss-cli": "^8.3.1",
+		"postcss-custom-media": "^8.0.0",
+		"postcss-discard-empty": "^4.0.1",
+		"postcss-if-media": "^1.0.3",
+		"rollup": "^2.42.3",
+		"rollup-plugin-filesize": "^9.1.1",
+		"rollup-plugin-local-resolve": "^1.0.7",
+		"rollup-plugin-peer-deps-external": "^2.2.4",
+		"rollup-plugin-postcss": "^4.0.0",
+		"rollup-plugin-terser": "^7.0.2",
+		"stylelint": "^13.12.0"
+	},
+	"husky": {
+		"hooks": {
+			"pre-commit": "lint-staged"
+		}
+	},
+	"lint-staged": {
+		"*.css": [
+			"npm run lint:css"
+		],
+		"*.{js,ts,tsx}": [
+			"npm run lint:js",
+			"npm run format:js"
+		]
+	}
 }
