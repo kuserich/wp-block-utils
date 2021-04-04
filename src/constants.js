@@ -15,4 +15,6 @@ const POSITION_CLASSNAMES = {
 	'bottom right': 'is-position-bottom-right',
 };
 
-export { AUTHOR, PREFIX, IMAGE_TYPE, VIDEO_TYPE, POSITION_CLASSNAMES };
+const CSS_UNITS = [ 'px', '%', 'em', 'rem', 'vw', 'vh' ];
+
+export { AUTHOR, PREFIX, IMAGE_TYPE, VIDEO_TYPE, POSITION_CLASSNAMES, CSS_UNITS };
