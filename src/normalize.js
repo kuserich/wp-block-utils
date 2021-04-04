@@ -2,8 +2,7 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import { gt, get, replace, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst } from 'lodash-es';
-import { stripUnit } from './general';
+import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst } from 'lodash-es';
 
 /**
  * Generate dim CSS class name based on given ratio or opacity.
@@ -37,7 +36,7 @@ const normalizeBackgroundUrl = ( url ) => ( url ? { backgroundImage: `url(${ url
  * @param  {Object} styles 	    Spacing CSS styles.
  * @return {Object} 			Spacing CSS styles without zero or false values.
  */
-const normalizeZeroStyles = ( styles ) => pickBy( styles, ( style ) => gt( replace( style, /\D/g, '' ), 0 ) );
+const normalizeZeroStyles = ( styles ) => pickBy( styles, ( style ) => gt( stripNonNumericCharacters( style ), 0 ) );
 
 /**
  * Normalize padding and margin inline styles with removing falsy values.
@@ -62,9 +61,21 @@ const normalizeBackgroundSizeStyle = ( backgroundSize, backgroundWidth, backgrou
 		return backgroundSize;
 	}
 
-	const width = stripUnit( backgroundWidth ) === '0' ? 'auto' : backgroundWidth;
-	const height = stripUnit( backgroundHeight ) === '0' ? 'auto' : backgroundHeight;
+	const width = stripNonNumericCharacters( backgroundWidth ) === '0' ? 'auto' : backgroundWidth;
+	const height = stripNonNumericCharacters( backgroundHeight ) === '0' ? 'auto' : backgroundHeight;
 	return `${ width } ${ height }`;
+};
+
+/**
+ * Strips all non-numeric characters from the given string.
+ * Used to retrieve the digit value from a CSS value without knowing the unit.
+ * e.g. 100px --> 100
+ *
+ * @param {string} value CSS value.
+ * @return {string} Stripped value.
+ */
+const stripNonNumericCharacters = ( value ) => {
+	return value.replace( /\D/g, '' );
 };
 
 export {
@@ -74,4 +85,5 @@ export {
 	normalizeZeroStyles,
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
+	stripNonNumericCharacters,
 };
