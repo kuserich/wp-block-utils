@@ -76,10 +76,10 @@ const BackgroundImageSizeControl = ( {
 				label={ __( 'Background size', 'sixa' ) }
 				value={ backgroundSize }
 				options={ [
-					{ label: 'auto', value: 'auto' },
-					{ label: 'cover', value: 'cover' },
-					{ label: 'contain', value: 'contain' },
-					{ label: 'custom', value: 'custom' },
+					{ label: __( 'auto', 'sixa' ), value: 'auto' },
+					{ label: __( 'cover', 'sixa' ), value: 'cover' },
+					{ label: __( 'contain', 'sixa' ), value: 'contain' },
+					{ label: __( 'custom', 'sixa' ), value: 'custom' },
 				] }
 				onChange={ onChangeSize }
 			/>
