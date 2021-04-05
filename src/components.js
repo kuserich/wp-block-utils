@@ -53,40 +53,32 @@ export default function EditorStyles( { styles } ) {
  * A simple Inspector component to configure the background-size of a container.
  *
  * @param {Object} props
- * @param {string} props.backgroundSize			One of (auto, cover, contain, custom).
- * @param {string} props.backgroundWidth		Width value with unit (e.g. 100px).
- * @param {string} props.backgroundHeight		Height value with unit (e.g. 100px).
- * @param {Function} props.onChangeSize 		Handler for onChange event for size attribute.
+ * @param {string} props.backgroundSize 			One of (auto, cover, contain, custom).
+ * @param {Function} props.onChangeSelection 		Handler for onChange event for size attribute.
  * @param {Function} props.onChangeWidth 		Handler for onChange event for width attribute.
- * @param {Function} props.onChangeHeight	 	Handler for onChange event for height attribute.
+ * @param {Function} props.onChangeHeight 	 	Handler for onChange event for height attribute.
  */
-const BackgroundImageSizeControl = ( {
-	backgroundSize,
-	backgroundWidth,
-	backgroundHeight,
-	onChangeSize,
-	onChangeWidth,
-	onChangeHeight,
-} ) => {
-	const showBackgroundSizeInputs = backgroundSize === 'custom';
+const BackgroundImageSizeControl = ( { backgroundSize, onChangeSelection, onChangeWidth, onChangeHeight } ) => {
+	const { selection, width, height } = backgroundSize;
+	const showBackgroundSizeInputs = selection === 'custom';
 
 	return (
 		<>
 			<SelectControl
 				label={ __( 'Background size', 'sixa' ) }
-				value={ backgroundSize }
+				value={ selection }
 				options={ [
 					{ label: __( 'auto', 'sixa' ), value: 'auto' },
 					{ label: __( 'cover', 'sixa' ), value: 'cover' },
 					{ label: __( 'contain', 'sixa' ), value: 'contain' },
 					{ label: __( 'custom', 'sixa' ), value: 'custom' },
 				] }
-				onChange={ onChangeSize }
+				onChange={ onChangeSelection }
 			/>
 			{ showBackgroundSizeInputs && (
 				<Flex>
-					<UnitControl label={ __( 'Width', 'sixa' ) } onChange={ onChangeWidth } value={ backgroundWidth } />
-					<UnitControl label={ __( 'Height', 'sixa' ) } onChange={ onChangeHeight } value={ backgroundHeight } />
+					<UnitControl label={ __( 'Width', 'sixa' ) } onChange={ onChangeWidth } value={ width } />
+					<UnitControl label={ __( 'Height', 'sixa' ) } onChange={ onChangeHeight } value={ height } />
 				</Flex>
 			) }
 		</>
