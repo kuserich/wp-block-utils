@@ -51,19 +51,20 @@ const normalizeSpacingStyles = ( spacing, type ) =>
 /**
  * Generated a background-size CSS value from size selection and width and height values.
  *
- * @param {string} backgroundSize One of (auto, container, cover, custom).
- * @param {string} backgroundWidth CSS value including unit (e.g. 100px).
- * @param {string} backgroundHeight CSS value including unit (e.g. 100px).
+ * @param {Object} backgroundSize
+ * @param {string} backgroundSize.selection One of (auto, container, cover, custom).
+ * @param {string} backgroundSize.width CSS value including unit (e.g. 100px).
+ * @param {string} backgroundSize.height CSS value including unit (e.g. 100px).
  * @return {string} background-size value.
  */
-const normalizeBackgroundSizeStyle = ( backgroundSize, backgroundWidth, backgroundHeight ) => {
-	if ( backgroundSize !== 'custom' ) {
-		return backgroundSize;
+const normalizeBackgroundSizeStyle = ( { selection, width, height } ) => {
+	if ( selection !== 'custom' ) {
+		return selection;
 	}
 
-	const width = stripNonNumericCharacters( backgroundWidth ) === '0' ? 'auto' : backgroundWidth;
-	const height = stripNonNumericCharacters( backgroundHeight ) === '0' ? 'auto' : backgroundHeight;
-	return `${ width } ${ height }`;
+	const widthValue = stripNonNumericCharacters( width ) === '0' ? 'auto' : width;
+	const heightValue = stripNonNumericCharacters( height ) === '0' ? 'auto' : height;
+	return `${ widthValue } ${ heightValue }`;
 };
 
 /**
