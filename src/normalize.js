@@ -2,7 +2,7 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst } from 'lodash-es';
+import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst, isArray } from 'lodash-es';
 
 /**
  * Generate dim CSS class name based on given ratio or opacity.
@@ -79,6 +79,13 @@ const stripNonNumericCharacters = ( value ) => {
 	return value.replace( /\D/g, '' );
 };
 
+/**
+ * Check if value is classified as an array object and non-empty.
+ *
+ * @param  {Array}	arr			Array object.
+ */
+const normalizeArray = ( arr ) => ( isArray( arr ) && arr && arr.length ? true : false );
+
 export {
 	normalizeDimRatio,
 	normalizeFocalPointPosition,
@@ -87,4 +94,5 @@ export {
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
 	stripNonNumericCharacters,
+	normalizeArray,
 };
