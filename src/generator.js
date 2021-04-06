@@ -1,8 +1,13 @@
 /**
  * External dependencies
  */
-import { snakeCase, forOwn, toLower, isUndefined } from 'lodash-es';
+import { snakeCase, forOwn, toLower, isUndefined, trim } from 'lodash-es';
 import { PREFIX } from './constants';
+
+/**
+ * WordPress dependencies
+ */
+const { decodeEntities } = wp.htmlEntities;
 
 /**
  * Generate shortcode.
@@ -23,4 +28,12 @@ const generateShortcode = ( tag, attrs, namespace ) => {
 	return shortcode;
 };
 
-export { generateShortcode };
+/**
+ * Generate formatted content.
+ *
+ * @param  {string} content 	Post content.
+ * @return {string} 			Formatted post content.
+ */
+const generateFormattedContent = ( content ) => decodeEntities( trim( content ) );
+
+export { generateShortcode, generateFormattedContent };
