@@ -11,7 +11,7 @@ export {
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
 } from './normalize';
-export { generateShortcode } from './generator';
 export { restFetchStateful } from './rest';
+export { generateShortcode, generateFormattedContent } from './generator';
 export { isPositionCenter, positionToClassName } from './position';
 export { visibilityClassNames, visibilityAttrs, VisibilityToolbar } from './visibility';
