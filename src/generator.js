@@ -1,7 +1,7 @@
 /**
  * External dependencies
  */
-import { snakeCase, forOwn, toLower, isUndefined, trim } from 'lodash-es';
+import { snakeCase, forOwn, toLower, trim } from 'lodash-es';
 import { PREFIX } from './constants';
 
 /**
@@ -18,8 +18,7 @@ const { decodeEntities } = wp.htmlEntities;
  * @return {string} 			Generated shortcode tag.
  */
 const generateShortcode = ( tag, attrs, namespace ) => {
-	namespace = isUndefined( namespace ) ? PREFIX : namespace;
-	let shortcode = `[${ snakeCase( namespace ) }_${ tag }`;
+	let shortcode = `[${ snakeCase( namespace || PREFIX ) }_${ tag }`;
 	forOwn( attrs, ( value, key ) => {
 		shortcode += ' ' + toLower( key ) + '="' + value + '"';
 	} );
