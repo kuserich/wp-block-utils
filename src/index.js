@@ -12,5 +12,6 @@ export {
 	normalizeBackgroundSizeStyle,
 } from './normalize';
 export { generateShortcode } from './generator';
+export { restFetchStateful } from './rest';
 export { isPositionCenter, positionToClassName } from './position';
 export { visibilityClassNames, visibilityAttrs, VisibilityToolbar } from './visibility';
