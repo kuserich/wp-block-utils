@@ -17,8 +17,8 @@ const { decodeEntities } = wp.htmlEntities;
  * @param  {string} namespace 	Project-specific prefix.
  * @return {string} 			Generated shortcode tag.
  */
-const generateShortcode = ( tag, attrs, namespace ) => {
-	let shortcode = `[${ snakeCase( namespace || PREFIX ) }_${ tag }`;
+const generateShortcode = ( tag, attrs, namespace = PREFIX ) => {
+	let shortcode = `[${ snakeCase( namespace ) }_${ tag }`;
 	forOwn( attrs, ( value, key ) => {
 		shortcode += ' ' + toLower( key ) + '="' + value + '"';
 	} );

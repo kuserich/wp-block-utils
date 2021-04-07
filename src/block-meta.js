@@ -10,7 +10,7 @@ import { PREFIX } from './constants';
  * @param  {string} namespace 	Project-specific prefix.
  * @return {string} 			Return block name with plugin prefix prepended to it.
  */
-const blockName = ( block, namespace ) => `${ namespace || PREFIX }/${ block }`;
+const blockName = ( block, namespace = PREFIX ) => `${ namespace }/${ block }`;
 
 /**
  * Generate WordPress block specific CSS class name.
@@ -19,6 +19,6 @@ const blockName = ( block, namespace ) => `${ namespace || PREFIX }/${ block }`;
  * @param  {string} namespace 	Project-specific prefix.
  * @return {string} 			WordPress generated format block CSS class name.
  */
-const blockClassName = ( block, namespace ) => `wp-block-${ namespace || PREFIX }-${ block }`;
+const blockClassName = ( block, namespace = PREFIX ) => `wp-block-${ namespace }-${ block }`;
 
 export { blockName, blockClassName };
