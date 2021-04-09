@@ -10,7 +10,7 @@ export {
 	normalizeZeroStyles,
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
-	normalizeArray,
+	isNonEmptyArray,
 } from './normalize';
 export { restFetchStateful } from './rest';
 export { generateShortcode, generateFormattedContent } from './generator';
