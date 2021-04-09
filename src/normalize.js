@@ -84,7 +84,7 @@ const stripNonNumericCharacters = ( value ) => {
  *
  * @param  {Array}	arr			Array object.
  */
-const normalizeArray = ( arr ) => ( isArray( arr ) && arr && arr.length ? true : false );
+const isNonEmptyArray = ( arr ) => !! ( isArray( arr ) && arr.length );
 
 export {
 	normalizeDimRatio,
@@ -94,5 +94,5 @@ export {
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
 	stripNonNumericCharacters,
-	normalizeArray,
+	isNonEmptyArray,
 };
