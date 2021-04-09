@@ -84,7 +84,7 @@ const stripNonNumericCharacters = ( value ) => {
  *
  * @param  {Array}	arr			Array object.
  */
-const isNonEmptyArray = ( arr ) => !! ( isArray( arr ) && arr.length );
+const isNonEmptyArray = ( arr ) => isArray( arr ) && !! arr.length;
 
 export {
 	normalizeDimRatio,
