@@ -2,7 +2,7 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst, isArray, split, join } from 'lodash-es';
+import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst, isArray, split, join, replace } from 'lodash-es';
 
 /**
  * Generate dim CSS class name based on given ratio or opacity.
@@ -79,11 +79,11 @@ const normalizeWhitespace = ( text ) => join( split( text, /\s/g ), '&nbsp;' );
  * Used to retrieve the digit value from a CSS value without knowing the unit.
  * e.g. 100px --> 100
  *
- * @param {string} value CSS value.
- * @return {string} Stripped value.
+ * @param 	{string} 	value 		CSS value.
+ * @return 	{string} 				Stripped value.
  */
 const stripNonNumericCharacters = ( value ) => {
-	return value.replace( /\D/g, '' );
+	return replace( value, /\D/g, '' );
 };
 
 /**

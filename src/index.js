@@ -11,6 +11,7 @@ export {
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
 	normalizeWhitespace,
+	stripNonNumericCharacters,
 	isNonEmptyArray,
 } from './normalize';
 export { restFetchStateful } from './rest';
