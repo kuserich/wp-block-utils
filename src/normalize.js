@@ -2,7 +2,7 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst, isArray, replace } from 'lodash-es';
+import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst, isArray, split, join, replace } from 'lodash-es';
 
 /**
  * Generate dim CSS class name based on given ratio or opacity.
@@ -68,6 +68,13 @@ const normalizeBackgroundSizeStyle = ( { selection, width, height } ) => {
 };
 
 /**
+ * Replaces empty space with nbsp.
+ *
+ * @param  {string}	text			Returns string replaced with nbsp.
+ */
+const normalizeWhitespace = ( text ) => join( split( text, /\s/g ), '&nbsp;' );
+
+/**
  * Strips all non-numeric characters from the given string.
  * Used to retrieve the digit value from a CSS value without knowing the unit.
  * e.g. 100px --> 100
@@ -93,6 +100,7 @@ export {
 	normalizeZeroStyles,
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
+	normalizeWhitespace,
 	stripNonNumericCharacters,
 	isNonEmptyArray,
 };

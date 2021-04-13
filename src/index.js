@@ -10,6 +10,7 @@ export {
 	normalizeZeroStyles,
 	normalizeSpacingStyles,
 	normalizeBackgroundSizeStyle,
+	normalizeWhitespace,
 	stripNonNumericCharacters,
 	isNonEmptyArray,
 } from './normalize';
