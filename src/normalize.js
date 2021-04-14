@@ -83,7 +83,7 @@ const normalizeWhitespace = ( text ) => join( split( text, /\s/g ), '&nbsp;' );
  * @return 	{string} 				Stripped value.
  */
 const stripNonNumericCharacters = ( value ) => {
-	return replace( value, /\D/g, '' );
+	return replace( value, /[^\d.-]/g, '' );
 };
 
 /**
