@@ -118,9 +118,10 @@ const isNonEmptyArray = ( arr ) => isArray( arr ) && !! arr.length;
  * valid CSS properties like 'background-color' and not 'backgroundColor'.
  *
  * Example:
+ *
  * generateCSSString( '.my-selector', { 'line-height': '12px', 'color': 'red' } )
  *
- * > .my-selector{line-height:12px;background-color:red;}
+ * Returns: .my-selector{line-height:12px;color:red;}
  *
  * @param  {string} selector	Any valid CSS selector.
  * @param  {Object} styles		Object where the keys are CSS properties and the value their corresponding value.
