@@ -13,6 +13,7 @@ export {
 	normalizeWhitespace,
 	stripNonNumericCharacters,
 	isNonEmptyArray,
+	generateCSSString,
 } from './normalize';
 export { restFetchStateful } from './rest';
 export { stringToBoolean, booleanToString } from './formatting';
