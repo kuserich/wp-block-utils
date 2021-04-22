@@ -109,18 +109,21 @@ const stripNonNumericCharacters = ( value ) => {
 const isNonEmptyArray = ( arr ) => isArray( arr ) && !! arr.length;
 
 /**
- * Generate CSS string from selector and key/value pair.
+ * Generate a minified CSS string from selector and key/value pair.
+ *
+ * The selector variable must be a valid CSS selector string like .my-class
+ * or #my-id.
+ *
+ * The styles variable must be an object and the keys must be
+ * valid CSS properties like 'background-color' and not 'backgroundColor'.
  *
  * Example:
- * stylecreate(
- * '.my-selector',
- * { 'line-height': '12px', 'background-color': 'red' }
- * )
+ * generateCSSString( '.my-selector', { 'line-height': '12px', 'color': 'red' } )
  *
  * > .my-selector{line-height:12px;background-color:red;}
  *
- * @param  {string} selector
- * @param  {Object} styles
+ * @param  {string} selector	Any valid CSS selector.
+ * @param  {Object} styles		Object where the keys are CSS properties and the value their corresponding value.
  */
 const generateCSSString = ( selector, styles ) => {
 	const rules = reduce( styles, ( concatenatedCSSString, value, key ) => concatenatedCSSString.concat( key, ':', value, ';' ), '' );
