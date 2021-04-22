@@ -2,7 +2,22 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst, isArray, split, join, replace } from 'lodash-es';
+import {
+	gt,
+	get,
+	pickBy,
+	isEqual,
+	multiply,
+	divide,
+	round,
+	isPlainObject,
+	upperFirst,
+	isArray,
+	split,
+	join,
+	replace,
+	reduce,
+} from 'lodash-es';
 
 /**
  * Generate dim CSS class name based on given ratio or opacity.
@@ -93,6 +108,25 @@ const stripNonNumericCharacters = ( value ) => {
  */
 const isNonEmptyArray = ( arr ) => isArray( arr ) && !! arr.length;
 
+/**
+ * Generate CSS string from selector and key/value pair.
+ *
+ * Example:
+ * stylecreate(
+ * '.my-selector',
+ * { 'line-height': '12px', 'background-color': 'red' }
+ * )
+ *
+ * > .my-selector{line-height:12px;background-color:red;}
+ *
+ * @param  {string} selector
+ * @param  {Object} styles
+ */
+const generateCSSString = ( selector, styles ) => {
+	const rules = reduce( styles, ( concatenatedCSSString, value, key ) => concatenatedCSSString.concat( key, ':', value, ';' ), '' );
+	return selector.concat( '{', rules, '}' );
+};
+
 export {
 	normalizeDimRatio,
 	normalizeFocalPointPosition,
@@ -103,4 +137,5 @@ export {
 	normalizeWhitespace,
 	stripNonNumericCharacters,
 	isNonEmptyArray,
+	generateCSSString,
 };
