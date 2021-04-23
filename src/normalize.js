@@ -2,22 +2,7 @@
  * External dependencies
  */
 import renameKeys from 'rename-keys';
-import {
-	gt,
-	get,
-	pickBy,
-	isEqual,
-	multiply,
-	divide,
-	round,
-	isPlainObject,
-	upperFirst,
-	isArray,
-	split,
-	join,
-	replace,
-	reduce,
-} from 'lodash-es';
+import { gt, get, pickBy, isEqual, multiply, divide, round, isPlainObject, upperFirst, isArray, split, join, replace } from 'lodash-es';
 
 /**
  * Generate dim CSS class name based on given ratio or opacity.
@@ -108,29 +93,6 @@ const stripNonNumericCharacters = ( value ) => {
  */
 const isNonEmptyArray = ( arr ) => isArray( arr ) && !! arr.length;
 
-/**
- * Generate a minified CSS string from selector and key/value pair.
- *
- * The selector variable must be a valid CSS selector string like .my-class
- * or #my-id.
- *
- * The styles variable must be an object and the keys must be
- * valid CSS properties like 'background-color' and not 'backgroundColor'.
- *
- * Example:
- *
- * generateCSSString( '.my-selector', { 'line-height': '12px', 'color': 'red' } )
- *
- * Returns: .my-selector{line-height:12px;color:red;}
- *
- * @param  {string} selector	Any valid CSS selector.
- * @param  {Object} styles		Object where the keys are CSS properties and the value their corresponding value.
- */
-const generateCSSString = ( selector, styles ) => {
-	const rules = reduce( styles, ( concatenatedCSSString, value, key ) => concatenatedCSSString.concat( key, ':', value, ';' ), '' );
-	return selector.concat( '{', rules, '}' );
-};
-
 export {
 	normalizeDimRatio,
 	normalizeFocalPointPosition,
@@ -141,5 +103,4 @@ export {
 	normalizeWhitespace,
 	stripNonNumericCharacters,
 	isNonEmptyArray,
-	generateCSSString,
 };

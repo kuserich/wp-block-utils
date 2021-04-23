@@ -13,10 +13,9 @@ export {
 	normalizeWhitespace,
 	stripNonNumericCharacters,
 	isNonEmptyArray,
-	generateCSSString,
 } from './normalize';
 export { restFetchStateful } from './rest';
 export { stringToBoolean, booleanToString } from './formatting';
-export { generateShortcode, generateFormattedContent } from './generator';
+export { generateShortcode, generateFormattedContent, generateCSSString } from './generator';
 export { isPositionCenter, positionToClassName } from './position';
 export { visibilityClassNames, visibilityAttrs, VisibilityToolbar } from './visibility';
