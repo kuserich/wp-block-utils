@@ -6,10 +6,10 @@ import { compact, forEach, map } from 'lodash-es';
 /**
  * WordPress dependencies
  */
-const { __ } = wp.i18n;
-const { Spinner, SelectControl, __experimentalUnitControl: UnitControl, Flex } = wp.components;
-const { useEffect } = wp.element;
-const { transformStyles } = wp.blockEditor;
+import { __ } from '@wordpress/i18n';
+import { Spinner, SelectControl, __experimentalUnitControl as UnitControl, Flex } from '@wordpress/components';
+import { useEffect } from '@wordpress/element';
+import { transformStyles } from '@wordpress/block-editor';
 
 /**
  * A simple component to notify users that their action is being processed.

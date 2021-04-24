@@ -38,7 +38,9 @@
 	],
 	"homepage": "https://github.com/sixach/sixa-wp-block-utils#readme",
 	"dependencies": {
+		"@wordpress/block-editor": "^5.3.2",
 		"@wordpress/components": "^13.0.2",
+		"@wordpress/element": "^2.20.2",
 		"@wordpress/i18n": "^3.19.2",
 		"classnames": "^2.2.6",
 		"lodash-es": "^4.17.21",
