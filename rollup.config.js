@@ -8,34 +8,11 @@ import replace from '@rollup/plugin-replace';
 
 import pkg from './package.json';
 
-const globals = {
-	'lodash-es': 'lodash-es',
-	'rename-keys': 'index',
-	classnames: 'classnames',
-};
-
 const config = {
 	input: 'src/index.js',
 	output: [
 		{
-			file: pkg.browser,
-			format: 'umd',
-			name: 'BlockUtils',
-			globals,
-		},
-		{
-			file: 'dist/wp-block-utils.js',
-			format: 'umd',
-			name: 'BlockUtils',
-			globals,
-		},
-		{
-			file: pkg.main,
-			format: 'cjs',
-			name: 'BlockUtils',
-		},
-		{
-			file: pkg.module,
+			file: 'dist/index.js',
 			format: 'es',
 		},
 	],
