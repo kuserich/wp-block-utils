@@ -7,7 +7,7 @@ import { PREFIX } from './constants';
 /**
  * WordPress dependencies
  */
-const { decodeEntities } = wp.htmlEntities;
+import { decodeEntities } from '@wordpress/html-entities';
 
 /**
  * Generate shortcode.
