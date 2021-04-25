@@ -11,11 +11,11 @@ import {
 	lowerCase,
 	map,
 } from 'lodash-es'; /**
-iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii 
+iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii
 iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii * WordPress dependencies
 iiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii */
-const { _x, sprintf } = wp.i18n;
-const { ToolbarGroup, Dashicon } = wp.components;
+import { _x, sprintf } from '@wordpress/i18n';
+import { ToolbarGroup, Dashicon } from '@wordpress/components';
 
 /**
  * Returns a list of visibility breakpoint attributes.

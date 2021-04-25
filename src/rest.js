@@ -6,8 +6,8 @@ import { get } from 'lodash-es';
 /**
  * WordPress dependencies
  */
-const { apiFetch } = wp;
-const { addQueryArgs } = wp.url;
+import apiFetch from '@wordpress/api-fetch';
+import { addQueryArgs } from '@wordpress/url';
 
 /**
  * Fetch rest stateful.

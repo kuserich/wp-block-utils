@@ -10,7 +10,7 @@ import set from 'lodash-es/set';
 /**
  * Internal block libraries
  */
-const { SVG, Path } = wp.components;
+import { SVG, Path } from '@wordpress/components';
 
 /**
  * Custom block icons
