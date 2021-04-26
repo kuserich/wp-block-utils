@@ -53,9 +53,9 @@ const generateFormattedContent = ( content ) => decodeEntities( trim( content ) 
  * @param  {string} selector	Any valid CSS selector.
  * @param  {Object} styles		Object where the keys are CSS properties and the value their corresponding value.
  */
-const generateCSSString = ( selector, styles ) => {
+const generateCSS = ( selector, styles ) => {
 	const rules = reduce( styles, ( concatenatedCSSString, value, key ) => concatenatedCSSString.concat( key, ':', value, ';' ), '' );
 	return selector.concat( '{', rules, '}' );
 };
 
-export { generateShortcode, generateFormattedContent, generateCSSString };
+export { generateShortcode, generateFormattedContent, generateCSS };
