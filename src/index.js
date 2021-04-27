@@ -16,6 +16,6 @@ export {
 } from './normalize';
 export { restFetchStateful } from './rest';
 export { stringToBoolean, booleanToString } from './formatting';
-export { generateShortcode, generateFormattedContent } from './generator';
+export { generateShortcode, generateFormattedContent, generateCSS } from './generator';
 export { isPositionCenter, positionToClassName } from './position';
 export { visibilityClassNames, visibilityAttrs, VisibilityToolbar } from './visibility';
