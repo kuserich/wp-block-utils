@@ -25,7 +25,7 @@ import stringToBoolean from '../string-to-boolean';
  *
  * booleanToString( true );
  *
- * // => boolean 'yes'
+ * // => string 'yes'
  */
 const booleanToString = ( input ) => {
 	if ( ! isBoolean( input ) ) {

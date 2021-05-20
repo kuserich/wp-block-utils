@@ -17,6 +17,8 @@ import { replace, nth, invoke } from 'lodash';
  * @example
  *
  * blockStyleSlug( 'wp-block-sixa-spacer is-style-fancy test-class-name' );
+ *
+ * // => string 'fancy'
  */
 const blockStyleSlug = ( classNames ) => replace( nth( invoke( classNames, 'match', /is-style-[^{\s]*/ ) ), /is-style-/, '' );
 

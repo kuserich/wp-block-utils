@@ -18,6 +18,8 @@ import { nth, invoke } from 'lodash';
  * @example
  *
  * blockClassName( 'wp-block-sixa-spacer custom-class-name test-class-name' );
+ *
+ * // => string 'wp-block-sixa-spacer'
  */
 const blockClassName = ( classNames ) => nth( invoke( classNames, 'match', /wp-block-[^{\s]*/ ) );
 

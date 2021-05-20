@@ -10,6 +10,8 @@
  * @example
  *
  * backgroundImageStyle( 'https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png' );
+ *
+ * // => Object { backgroundImage: 'url(https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png)' }
  */
 const backgroundImageStyle = ( url ) => ( url ? { backgroundImage: `url(${ url })` } : {} );
 
