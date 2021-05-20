@@ -1,22 +1,17 @@
-# sixa-wp-block-utils
+# Sixa Utils
 
-A library of useful functions and components to be used across all sixa WordPress blocks.
+This packages includes a collection of JavaScript utility methods delivering modularity, performance & extras.
 
 ## Installation
-Before installing from NPM, make sure to add the sixa enterprise registry and sign in with your NPM user.
-```
-npm i @sixa/wp-block-utils
+
+Install the module:
+
+```bash
+npm install @sixach/wp-block-utils --save
 ```
 
-or 
-```
-npm i @sixa/wp-block-utils --save-dev
-```
-if you are using this library inside a plugin directly.
+_This package assumes that your code will run in an **ES2015+** environment. If you're using an environment that has limited or no support for ES2015+ such as IE browsers then using [core-js](https://github.com/zloirock/core-js) will add polyfills for these methods._
 
-## Usage
-After installing the package, all functions can be used as named imports.
-E.g.:
-```
-import { normalizeZeroValues } from '@sixa/wp-block-utils';
-```
+## Documentation
+
+Documentation pages can be viewed [here](https://sixach.github.io/wp-block-utils).
