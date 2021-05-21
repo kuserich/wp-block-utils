@@ -69,7 +69,9 @@
 		"cross-env": "^7.0.3",
 		"husky": "^6.0.0",
 		"lint-staged": "^11.0.0",
-		"lodash": "^4.17.21"
+		"lodash": "^4.17.21",
+		"slugify": "^1.5.3",
+		"striptags": "^3.1.1"
 	},
 	"peerDependencies": {
 		"@wordpress/api-fetch": "5.x",
