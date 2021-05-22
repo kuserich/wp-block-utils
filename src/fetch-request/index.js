@@ -1,7 +1,8 @@
 /**
  * Utility to make WordPress REST API requests. It's a wrapper around `window.fetch`.
  *
- * @see https://github.com/WordPress/gutenberg/blob/trunk/packages/api-fetch/README.md
+ * @see 	https://github.com/WordPress/gutenberg/blob/trunk/packages/api-fetch/README.md
+ * @ignore
  */
 import apiFetch from '@wordpress/api-fetch';
 
@@ -9,7 +10,8 @@ import apiFetch from '@wordpress/api-fetch';
  * This packages includes a library of generic WordPress components to be used for
  * creating common UI elements shared between screens and features of the WordPress dashboard.
  *
- * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-components/
+ * @see 	https://developer.wordpress.org/block-editor/reference-guides/packages/packages-components/
+ * @ignore
  */
 import { addQueryArgs } from '@wordpress/url';
 
