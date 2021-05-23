@@ -10,7 +10,7 @@ import { get } from 'lodash';
  *
  * @ignore
  */
-import isPositionCenter from './../is-position-center';
+import isPositionCenter from '../is-position-center';
 
 /**
  * Possible background position values.
