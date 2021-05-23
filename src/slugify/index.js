@@ -16,6 +16,7 @@ import striptags from 'striptags';
 
 /**
  * Slugifies every string, even when it contains unicode!
+ * Properly strips all HTML tags including script and style.
  *
  * @function
  * @since     1.0.0
