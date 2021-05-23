@@ -11,8 +11,6 @@ import { __, sprintf } from '@wordpress/i18n';
  *
  * @constant
  * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
  * @type        {Array}
  * @ignore
  */

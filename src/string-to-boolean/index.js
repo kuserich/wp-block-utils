@@ -9,11 +9,9 @@ import { isBoolean, isEqual } from 'lodash';
  * Converts a string (e.g. 'yes' or 'no') to a bool.
  *
  * @function
- * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
- * @param  	 	{string|number} input           String to convert. If a bool is passed it will be returned as-is.
- * @return 	 	{boolean}                       Converted value.
+ * @since     1.0.0
+ * @param  	  {string|number} input           String to convert. If a bool is passed it will be returned as-is.
+ * @return 	  {boolean}                       Converted value.
  * @example
  *
  * stringToBoolean( 'yes' );

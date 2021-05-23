@@ -10,11 +10,9 @@ import { nth, invoke } from 'lodash';
  * By default the block CSS class name is prefixed with `wp-block` keyword.
  *
  * @function
- * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
- * @param  	 	{string} classNames         CSS class names assigned to the block.
- * @return 	 	{string}                    CSS class name generated for the block.
+ * @since     1.0.0
+ * @param  	  {string} classNames         CSS class names assigned to the block.
+ * @return 	  {string}                    CSS class name generated for the block.
  * @example
  *
  * blockClassName( 'wp-block-sixa-spacer custom-class-name test-class-name' );

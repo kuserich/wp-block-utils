@@ -7,8 +7,6 @@
  *
  * @constant
  * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
  * @type        {Object}
  * @see         https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
  * @ignore

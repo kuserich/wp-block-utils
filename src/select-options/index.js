@@ -32,13 +32,11 @@ import optionNone from './option-none';
  * SelectControl allow users to select from a single-option menu. It functions as a wrapper around the browser’s native `<select>` element.
  *
  * @function
- * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
- * @param  	 	{Array}  posts          The response on the API call of array of post objects.
- * @param  	 	{string} paths          The property paths to pick.
- * @param  	 	{Array}  none        	Text to display for showing no options being selected.
- * @return 	 	{Array}                 An array of objects containing the label to be shown to the user, and value used to choose the selected value.
+ * @since     1.0.0
+ * @param  	  {Array}  posts          The response on the API call of array of post objects.
+ * @param  	  {string} paths          The property paths to pick.
+ * @param  	  {Array}  none        	  Text to display for showing no options being selected.
+ * @return 	  {Array}                 An array of objects containing the label to be shown to the user, and value used to choose the selected value.
  * @example
  *
  * selectOptions( [ { id: 1, title: { rendered: 'sunt aut facere' } }, { id: 2, title: { rendered: 'qui est esse' } } ], { id: 'value', 'title.rendered': 'label' } );

@@ -12,11 +12,9 @@ import { split, join } from 'lodash';
  * This method is handy when breaking the words might be disruptive.
  *
  * @function
- * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
- * @param  	 	{string} input          String to convert.
- * @return 	 	{string}                Converted value.
+ * @since     1.0.0
+ * @param  	  {string} input          String to convert.
+ * @return 	  {string}                Converted value.
  * @example
  *
  * spaceToNbsp( 'Hello World! This is an example.' );

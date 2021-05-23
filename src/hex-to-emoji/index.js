@@ -16,11 +16,9 @@ import formattedContent from './../formatted-content';
  * Converts a given hex-unicode into an Emoji icon.
  *
  * @function
- * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
- * @param  	 	{string} value      Emoji specific hex code.
- * @return 	 	{any}               Rendered Emoji.
+ * @since     1.0.0
+ * @param  	  {string} value      Emoji specific hex code.
+ * @return 	  {any}               Rendered Emoji.
  * @example
  *
  * hexToEmoji( '1F603' );

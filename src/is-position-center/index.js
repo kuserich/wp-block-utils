@@ -9,11 +9,9 @@ import { isEqual } from 'lodash';
  * Determine whether the content is center positioned.
  *
  * @function
- * @since 	 	1.0.0
- * @author	 	Mahdi Yazdani
- * @copyright	sixa AG
- * @param  	 	{string}  position            The value to check.
- * @return 	 	{boolean}                     Return true if content is center positioned.
+ * @since     1.0.0
+ * @param  	  {string}  position            The value to check.
+ * @return 	  {boolean}                     Return true if content is center positioned.
  * @example
  *
  * isPositionCenter( 'center' );
