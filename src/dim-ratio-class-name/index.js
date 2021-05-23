@@ -10,7 +10,7 @@ import { isEqual, multiply, round, divide } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param	  {number} value           Dim ratio or opacity.
+ * @param	  {number} value           Dim ratio or opacity. [0-100]
  * @return 	  {string}                 CSS class name generated from the ratio value.
  * @example
  *
