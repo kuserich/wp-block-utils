@@ -7,6 +7,7 @@ import { get, round, multiply } from 'lodash';
 
 /**
  * Generates corresponding CSS based on the provided focal point picker values.
+ * Example focal point picker value: `{ x: 0.5, y: 0.1 }` Corresponding CSS: `background-position: 50% 10%`;
  *
  * @function
  * @since     1.0.0
