@@ -18,7 +18,7 @@ import renameKeys from 'rename-keys';
  *
  * @ignore
  */
-import deepPick from './deep-pick';
+import deepPick from '../deep-pick';
 
 /**
  * Text to display for showing no options being selected.
