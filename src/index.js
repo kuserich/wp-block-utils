@@ -9,7 +9,7 @@ export { default as focalPointStyle } from './focal-point-style';
 export { default as formattedContent } from './formatted-content';
 export { default as getMailTo } from './get-mailto';
 export { default as hexToEmoji } from './hex-to-emoji';
-export { default as ifArray } from './if-array';
+export { default as isNonEmptyArray } from './is-non-empty-array';
 export { default as insertAtIndex } from './insert-at-index';
 export { default as isPositionCenter } from './is-position-center';
 export { default as jsonify } from './jsonify';

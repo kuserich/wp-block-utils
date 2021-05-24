@@ -14,10 +14,10 @@ import { isArray } from 'lodash';
  * @return 	  {boolean}             Whether the argument provided is a non-empty array.
  * @example
  *
- * ifArray( [] );
+ * isNonEmptyArray( [] );
  *
  * // => boolean false
  */
-const ifArray = ( value ) => isArray( value ) && !! value.length;
+const isNonEmptyArray = ( value ) => isArray( value ) && !! value.length;
 
-export default ifArray;
+export default isNonEmptyArray;
