@@ -1,5 +1,7 @@
 /**
  * The function to be tested.
+ *
+ * @ignore
  */
 import stringToBoolean from '../';
 
