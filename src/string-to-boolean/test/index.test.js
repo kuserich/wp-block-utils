@@ -6,7 +6,7 @@ import stringToBoolean from '../';
 /**
  * Testing the function given one or a series of inputs against the expected return.
  */
-describe( "Convert given inputs to a 'true' or 'false' boolean primitive.", () => {
+describe( "Converts given inputs to a 'true' or 'false' boolean primitive.", () => {
 	describe( "For 'truthy' inputs:", () => {
 		test.each( [
 			[ 'yes', true ],
