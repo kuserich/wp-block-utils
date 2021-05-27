@@ -21,3 +21,4 @@ export { default as slugify } from './slugify';
 export { default as spaceToNbsp } from './space-to-nbsp';
 export { default as stringToBoolean } from './string-to-boolean';
 export { default as stringify } from './stringify';
+export { default as stringifyQuery } from './stringify-query';
