@@ -8,30 +8,34 @@ import stringToBoolean from '../';
 /**
  * Testing the function given one or a series of inputs against the expected return.
  */
-describe( "Converts given inputs to a 'true' or 'false' boolean primitive.", () => {
-	describe( "For 'truthy' inputs:", () => {
-		test.each( [
-			[ 'yes', true ],
-			[ 1, true ],
-			[ 'true', true ],
-			[ 'TRUE', true ],
-			[ '1', true ],
-		] )( 'when given %p it returns %p', ( input, expected ) => {
-			expect( stringToBoolean( input ) ).toBe( expected );
-		} );
-	} );
-
-	describe( "For 'falsy' inputs:", () => {
-		test.each( [
-			[ 'no', false ],
-			[ 0, false ],
-			[ null, false ],
-			[ undefined, false ],
-			[ 'false', false ],
-			[ 'FALSE', false ],
-			[ '0', false ],
-		] )( 'when given %p it returns %p', ( input, expected ) => {
-			expect( stringToBoolean( input ) ).toBe( expected );
-		} );
+describe( "Converts a truthful input to the boolean primitive 'true'", () => {
+	test.each( [
+		[ 'yes', true ],
+		[ 'true', true ],
+		[ 'TRUE', true ],
+		[ '1', true ],
+		[ 1, true ],
+		[ true, true ],
+	] )( 'when given %p it returns %p', ( input, expected ) => {
+		expect( stringToBoolean( input ) ).toBe( expected );
 	} );
 } );
+
+describe( "Converts any other input to the boolean primitive 'false'", () => {
+	test.each( [
+		[ '', false ],
+		[ '0', false ],
+		[ 'no', false ],
+		[ 'false', false ],
+		[ 'FALSE', false ],
+		[ 0, false ],
+		[ 2, false ],
+		[ {}, false ],
+		[ [], false ],
+		[ false, false ],
+		[ null, false ],
+		[ undefined, false ],
+	] )( 'when given %p it returns %p', ( input, expected ) => {
+		expect( stringToBoolean( input ) ).toBe( expected );
+	} );
+});
