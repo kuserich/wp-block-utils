@@ -5,9 +5,6 @@
  */
 import stringToBoolean from '../';
 
-/**
- * Testing the function given one or a series of inputs against the expected return.
- */
 describe( "Converts a truthful input to the boolean primitive 'true'", () => {
 	test.each( [
 		[ 'yes', true ],
