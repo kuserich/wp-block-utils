@@ -37,6 +37,9 @@
 		"prepublishOnly": "npm run format && npm run build && npm run docs",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js",
+		"test:unit:help": "wp-scripts test-unit-js --help",
+		"test:unit:watch": "wp-scripts test-unit-js --watch",
+		"test:unit:debug": "wp-scripts --inspect-brk test-unit-js --runInBand --no-cache",
 		"docs": "documentation build src/** -f html --github -o docs"
 	},
 	"husky": {
