@@ -7,7 +7,7 @@ import getMailTo from '../';
 
 /**
  * An Array of Arrays with the arguments that are passed into the test fn for each row
- * 1st Array => input, 2nd Array => expected output
+ * For each array: Index[0] => input, Index[1] => expected output
  *
  * @see https://jestjs.io/docs/api#testeachtablename-fn-timeout
  */
