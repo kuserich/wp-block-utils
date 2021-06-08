@@ -23,13 +23,10 @@ const singleValidAddress = [
  * @ignore
  */
 const singleInvalidAddress = [
-	// Dangling special character
-	[ 'mailto:info@example.com#', [ 'info@example.com' ] ],
-	// Single Back slash
+	[ 'mailto:info@example.com#', [ 'info@example.com' ] ], // Dangling special character
 	// prettier-ignore
-	[ 'mailto:ex\ample@example.com', [ 'example@example.com' ] ],
-	// Escape sequence
-	[ 'mailto:in\fo@example.com', [ 'o@example.com' ] ],
+	[ 'mailto:ex\ample@example.com', [ 'example@example.com' ] ], // Single backslash
+	[ 'mailto:in\fo@example.com', [ 'o@example.com' ] ], // Escape sequence
 ];
 
 /**
@@ -49,24 +46,15 @@ const multipleValidAddresses = [
  * @ignore
  */
 const multipleInvalidAddresses = [
-	// Missing comma separator
-	[ 'mailto:info@example.cominfo@test.com', [ 'info@example.cominfo' ] ],
-	// Missing separator
-	[ 'mailto:infoexample.com,test@example.com', [ 'test@example.com' ] ],
-	// Missing mailto
-	[ 'info@example.com,info@test.com', [ 'info@example.com', 'info@test.com' ] ],
-	// Multiple '@' signs
-	[ 'mailto:info@@example.com,info@info.com', [ 'info@info.com' ] ],
-	// Double Backslash character before separator
-	[ 'mailto:ex\\ample@example.com,test\\@info.com', [ 'ample@example.com' ] ],
-	// Forward slash before separator
-	[ 'mailto:exam/ple@example.com,test/@example.com', [ 'ple@example.com' ] ],
-	// Space separated
-	[ 'mailto:in fo@example.com,te st@example.com', [ 'fo@example.com', 'st@example.com' ] ],
-	// Dangling comma
-	[ 'mailto:info@example.com,info@test.com,', [ 'info@example.com', 'info@test.com' ] ],
-	// Special characters instead of comma separator
-	[ 'mailto:info@example.com?test@info.com', [ 'info@example.com', 'test@info.com' ] ],
+	[ 'mailto:info@example.cominfo@test.com', [ 'info@example.cominfo' ] ], // Missing comma separator
+	[ 'mailto:infoexample.com,test@example.com', [ 'test@example.com' ] ], // Missing separator
+	[ 'info@example.com,info@test.com', [ 'info@example.com', 'info@test.com' ] ], // Missing mailto
+	[ 'mailto:info@@example.com,info@info.com', [ 'info@info.com' ] ], // Multiple '@' signs
+	[ 'mailto:ex\\ample@example.com,test\\@info.com', [ 'ample@example.com' ] ], // Double backslash character before separator
+	[ 'mailto:exam/ple@example.com,test/@example.com', [ 'ple@example.com' ] ], // Forward slash before separator
+	[ 'mailto:in fo@example.com,te st@example.com', [ 'fo@example.com', 'st@example.com' ] ], // Space separated
+	[ 'mailto:info@example.com,info@test.com,', [ 'info@example.com', 'info@test.com' ] ], // Dangling comma
+	[ 'mailto:info@example.com?test@info.com', [ 'info@example.com', 'test@info.com' ] ], // Special characters instead of comma separator
 ];
 
 /**
@@ -75,26 +63,16 @@ const multipleInvalidAddresses = [
  * @ignore
  */
 const malformedAddresses = [
-	// Comma used as separator
-	[ 'mailto:info@example,com', null ],
-	// Using quotes
-	[ 'mailto:"test"@example.com', null ],
-	// Using brackets
-	[ 'mailto:test@[123.123.123.123]', null ],
-	// Heavily malformed
-	[ 'mailto:#@%^%#$@#$@#.com', null ],
-	// Non-latin characters
-	[ 'mailto:あいうえお@example.com', null ],
-	// Forward slash before separator
-	[ 'mailto:example/@example.com', null ],
-	// Missing comma separator
-	[ 'mailto:info@examplecom', null ],
-	// Escape sequence before separator
-	[ 'mailto:info@exampl\n.com', null ],
-	// Incomplete address
-	[ 'mailto:test@example.', null ],
-	// Missing address
-	[ 'mailto', null ],
+	[ 'mailto:info@example,com', null ], // Comma used as separator
+	[ 'mailto:"test"@example.com', null ], // Using quotes
+	[ 'mailto:test@[123.123.123.123]', null ], // Using brackets
+	[ 'mailto:#@%^%#$@#$@#.com', null ], // Heavily malformed
+	[ 'mailto:あいうえお@example.com', null ], // Non-latin characters
+	[ 'mailto:example/@example.com', null ], // Forward slash before separator
+	[ 'mailto:info@examplecom', null ], // Missing comma separator
+	[ 'mailto:info@exampl\n.com', null ], // Escape sequence before separator
+	[ 'mailto:test@example.', null ], // Incomplete address
+	[ 'mailto', null ], // Missing address
 ];
 
 /**
@@ -112,14 +90,14 @@ const falsefulValues = [
 	[ false, null ],
 ];
 
-describe( 'Match RegEx pattern against sets of inputs', () => {
-	describe( 'against single valid addresses', () => {
+describe( 'Match RegEx pattern against an input string', () => {
+	describe( 'against a single valid address', () => {
 		test.each( singleValidAddress )( 'when given %p it returns %p', ( input, expected ) => {
 			expect( getMailTo( input ) ).toStrictEqual( expected );
 		} );
 	} );
 
-	describe( 'against single invalid addresses', () => {
+	describe( 'against a single invalid address', () => {
 		test.each( singleInvalidAddress )( 'when given %p it returns %p', ( input, expected ) => {
 			expect( getMailTo( input ) ).toStrictEqual( expected );
 		} );
