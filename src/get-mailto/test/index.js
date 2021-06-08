@@ -7,6 +7,8 @@ import getMailTo from '../';
 
 /**
  * Variations of single valid addresses
+ *
+ * @ignore
  */
 const singleValidAddress = [
 	[ 'mailto:info@example.com', [ 'info@example.com' ] ],
@@ -17,6 +19,8 @@ const singleValidAddress = [
 
 /**
  * Variations of single invalid addresses
+ *
+ * @ignore
  */
 const singleInvalidAddress = [
 	// Dangling special character
@@ -30,6 +34,8 @@ const singleInvalidAddress = [
 
 /**
  * Variations of multiple valid addresses
+ *
+ * @ignore
  */
 const multipleValidAddresses = [
 	[ 'mailto:info@example.com,info@test.com', [ 'info@example.com', 'info@test.com' ] ],
@@ -39,6 +45,8 @@ const multipleValidAddresses = [
 
 /**
  * Variations of multiple invalid addresses
+ *
+ * @ignore
  */
 const multipleInvalidAddresses = [
 	// Missing comma separator
@@ -63,6 +71,8 @@ const multipleInvalidAddresses = [
 
 /**
  * Variations containing special characters ('"', '#', '[]' etc.)
+ *
+ * @ignore
  */
 const malformedAddresses = [
 	// Comma used as separator
@@ -87,6 +97,11 @@ const malformedAddresses = [
 	[ 'mailto', null ],
 ];
 
+/**
+ * Variations containing falseful values
+ *
+ * @ignore
+ */
 const falsefulValues = [
 	[ [ '' ], null ],
 	[ [], null ],
