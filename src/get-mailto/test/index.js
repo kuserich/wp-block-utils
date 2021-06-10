@@ -41,7 +41,7 @@ describe( 'Returns null for invalid mailto string where no substring matches an 
 	} );
 } );
 
-describe( "Returns primitive 'null' for falseful values", () => {
+describe( "Returns primitive 'null' for falseful and empty values", () => {
 	test.each( [
 		[ [ '' ], null ],
 		[ [], null ],
