@@ -14,7 +14,6 @@ describe( 'Returns array with single email address for valid mailto string', () 
 		[ 'mailto:mail-with-dash@domain-with-dash.com', [ 'mail-with-dash@domain-with-dash.com' ] ],
 		[ 'mailto:ALLCAPS@EXAMPLE.COM', [ 'ALLCAPS@EXAMPLE.COM' ] ],
 		[ 'mailto:info1234@example1234.com', [ 'info1234@example1234.com' ] ],
-		[ 'info@example.com,', [ 'info@example.com' ] ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
@@ -25,7 +24,6 @@ describe( 'Returns array with all email addresses for valid mailto string with s
 		[ 'mailto:info@example.com,another@example.com', [ 'info@example.com', 'another@example.com' ] ],
 		[ 'mailto:info@example.com, another@example.com', [ 'info@example.com', 'another@example.com' ] ],
 		[ 'mailto:info@example.com another@example.com', [ 'info@example.com', 'another@example.com' ] ],
-		[ 'mailto:info@example.com,another@example.com, onemore@example.com', [ 'info@example.com', 'another@example.com', 'onemore@example.com' ] ], // Mixed separation
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
