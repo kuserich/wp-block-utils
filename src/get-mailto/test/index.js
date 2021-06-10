@@ -29,30 +29,13 @@ describe( 'Returns array with all email addresses for valid mailto string with s
 	} );
 } );
 
-describe( 'Returns array with single truncated email address for invalid mailto string with separated email addresses', () => {
+describe( 'Returns null for invalid mailto string where no substring matches an email pattern', () => {
 	test.each( [
-		[ 'mailto:forward/slash@example.com,test/@example.com', [ 'slash@example.com' ] ], // Forward slash before separator
-		[ 'mailto:special|character@example.com', [ 'character@example.com' ] ], // Special character
-		[ 'mailto:info@example.cominfo@test.com', [ 'info@example.cominfo' ] ], // Missing comma separator
-		[ 'mailto:infoexample.com,test@example.com', [ 'test@example.com' ] ], // Missing email separator
-		[ 'mailto:info@@example.com,info@info.com', [ 'info@info.com' ] ], // Multiple '@' signs
-		[ 'mailto:in fo@example.com', [ 'fo@example.com' ] ], // Space separated
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( getMailTo( input ) ).toStrictEqual( expected );
-	} );
-} );
-
-describe( "Returns primitive 'null' for invalid mailto string", () => {
-	test.each( [
-		[ 'mailto:info@exampl\n.com', null ], // Escape sequence before separator
-		[ 'mailto:info@example,com', null ], // Comma used as separator
-		[ 'mailto:"test"@example.com', null ], // Using quotes
-		[ 'mailto:test@[123.123.123.123]', null ], // Using brackets
-		[ 'mailto:#@%^%#$@#$@#.com', null ], // Heavily malformed
-		[ 'mailto:あいうえお@example.com', null ], // Non-latin characters
-		[ 'mailto:info@examplecom', null ], // Missing email separator
-		[ 'mailto:test@example.', null ], // Incomplete address
-		[ 'mailto', null ], // Missing address
+		[ 'mailto', null ],
+		[ 'mailto:info@example', null ],
+		[ 'mailto:info@example.', null ],
+		[ 'mailto:@example.com', null ],
+		[ 'mailto:example.com', null ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
