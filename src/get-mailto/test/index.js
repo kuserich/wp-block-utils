@@ -5,44 +5,46 @@
  */
 import getMailTo from '../';
 
-describe( 'Matching RegEx pattern against a single valid address should return a single item array', () => {
+describe( 'Returns array with single email address for valid mailto string', () => {
 	test.each( [
 		[ 'mailto:info@example.com', [ 'info@example.com' ] ],
-		[ 'mailto:test@info.com_-', [ 'test@info.com_-' ] ],
-		[ 'mailto:Test-123_@_info.com', [ 'Test-123_@_info.com' ] ],
-		[ 'mailto:in_fo@exa-mple.com', [ 'in_fo@exa-mple.com' ] ],
+		[ 'mailto:info@example.com,', [ 'info@example.com' ] ], // Dangling comma
+		[ 'mailto:firstname.lastname@sub.domain.com', [ 'firstname.lastname@sub.domain.com' ] ],
+		[ 'mailto:mail_with_underscores@domain_with_underscore.com', [ 'mail_with_underscores@domain_with_underscore.com' ] ],
+		[ 'mailto:mail-with-dash@domain-with-dash.com', [ 'mail-with-dash@domain-with-dash.com' ] ],
+		[ 'mailto:ALLCAPS@EXAMPLE.COM', [ 'ALLCAPS@EXAMPLE.COM' ] ],
+		[ 'mailto:info1234@example1234.com', [ 'info1234@example1234.com' ] ],
+		[ 'info@example.com,', [ 'info@example.com' ] ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( 'Matching RegEx pattern against multiple valid addresses should return a multiple item array', () => {
+describe( 'Returns array with all email addresses for valid mailto string with separated email addresses', () => {
 	test.each( [
-		[ 'mailto:info@example.com,info@test.com', [ 'info@example.com', 'info@test.com' ] ],
-		[ 'mailto:in_fo@example.com,INFO-123@test.com', [ 'in_fo@example.com', 'INFO-123@test.com' ] ],
-		[ 'mailto:test@_example.c-o-m,info@test-123.com', [ 'test@_example.c-o-m', 'info@test-123.com' ] ],
+		[ 'mailto:info@example.com,another@example.com', [ 'info@example.com', 'another@example.com' ] ],
+		[ 'mailto:info@example.com, another@example.com', [ 'info@example.com', 'another@example.com' ] ],
+		[ 'mailto:info@example.com another@example.com', [ 'info@example.com', 'another@example.com' ] ],
+		[ 'mailto:info@example.com,another@example.com, onemore@example.com', [ 'info@example.com', 'another@example.com', 'onemore@example.com' ] ], // Mixed separation
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( 'Matching RegEx pattern against multiple valid and invalid addresses should return a single or multiple item array', () => {
+describe( 'Returns array with single truncated email address for invalid mailto string with separated email addresses', () => {
 	test.each( [
+		[ 'mailto:forward/slash@example.com,test/@example.com', [ 'slash@example.com' ] ], // Forward slash before separator
+		[ 'mailto:special|character@example.com', [ 'character@example.com' ] ], // Special character
 		[ 'mailto:info@example.cominfo@test.com', [ 'info@example.cominfo' ] ], // Missing comma separator
-		[ 'mailto:infoexample.com,test@example.com', [ 'test@example.com' ] ], // Missing separator
-		[ 'info@example.com,info@test.com', [ 'info@example.com', 'info@test.com' ] ], // Missing mailto
+		[ 'mailto:infoexample.com,test@example.com', [ 'test@example.com' ] ], // Missing email separator
 		[ 'mailto:info@@example.com,info@info.com', [ 'info@info.com' ] ], // Multiple '@' signs
-		[ 'mailto:ex\\ample@example.com,test\\@info.com', [ 'ample@example.com' ] ], // Double backslash character before separator
-		[ 'mailto:exam/ple@example.com,test/@example.com', [ 'ple@example.com' ] ], // Forward slash before separator
-		[ 'mailto:in fo@example.com,te st@example.com', [ 'fo@example.com', 'st@example.com' ] ], // Space separated
-		[ 'mailto:info@example.com,info@test.com,', [ 'info@example.com', 'info@test.com' ] ], // Dangling comma
-		[ 'mailto:info@example.com?test@info.com', [ 'info@example.com', 'test@info.com' ] ], // Special characters instead of comma separator
+		[ 'mailto:in fo@example.com', [ 'fo@example.com' ] ], // Space separated
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( "Matching RegEx pattern against a single invalid address should return primitive 'null'", () => {
+describe( "Returns primitive 'null' for invalid mailto string", () => {
 	test.each( [
 		[ 'mailto:info@exampl\n.com', null ], // Escape sequence before separator
 		[ 'mailto:info@example,com', null ], // Comma used as separator
@@ -50,8 +52,7 @@ describe( "Matching RegEx pattern against a single invalid address should return
 		[ 'mailto:test@[123.123.123.123]', null ], // Using brackets
 		[ 'mailto:#@%^%#$@#$@#.com', null ], // Heavily malformed
 		[ 'mailto:あいうえお@example.com', null ], // Non-latin characters
-		[ 'mailto:example/@example.com', null ], // Forward slash before separator
-		[ 'mailto:info@examplecom', null ], // Missing comma separator
+		[ 'mailto:info@examplecom', null ], // Missing email separator
 		[ 'mailto:test@example.', null ], // Incomplete address
 		[ 'mailto', null ], // Missing address
 	] )( 'when given %p it returns %p', ( input, expected ) => {
@@ -59,7 +60,7 @@ describe( "Matching RegEx pattern against a single invalid address should return
 	} );
 } );
 
-describe( "Matching RegEx pattern against any other input should return primitive 'null'", () => {
+describe( "Returns primitive 'null' for falseful values", () => {
 	test.each( [
 		[ [ '' ], null ],
 		[ [], null ],
