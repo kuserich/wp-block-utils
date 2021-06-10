@@ -5,7 +5,7 @@
  */
 import backgroundImageStyle from '../';
 
-describe( "Return valid 'backgroundImage' CSS style object based on input string", () => {
+describe( "Returns object with valid 'backgroundImage' CSS style for vaild URL or local path string", () => {
 	test.each( [
 		[
 			'https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png',
@@ -27,13 +27,20 @@ describe( "Return valid 'backgroundImage' CSS style object based on input string
 	} );
 } );
 
-describe( "Return invalid 'backgroundImage' CSS style object based on falseful inputs", () => {
+describe( "Returns object with invalid 'backgroundImage' CSS style for invaild URL", () => {
 	test.each( [
 		[ {}, { backgroundImage: 'url([object Object])' } ],
 		[ true, { backgroundImage: 'url(true)' } ],
 		[ 1, { backgroundImage: 'url(1)' } ],
 		[ [ '' ], { backgroundImage: 'url()' } ],
 		[ [], { backgroundImage: 'url()' } ],
+	] )( 'when given %p it returns %p', ( input, expected ) => {
+		expect( backgroundImageStyle( input ) ).toStrictEqual( expected );
+	} );
+} );
+
+describe( 'Returns empty object for falseful inputs', () => {
+	test.each( [
 		[ '', {} ],
 		[ 0, {} ],
 		[ null, {} ],
