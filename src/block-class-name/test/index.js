@@ -5,11 +5,11 @@
  */
 import blockClassName from '../';
 
-describe( 'Matching RegEx pattern against a valid input string and return first match', () => {
+describe( 'Return string with single CSS class name for valid block specific string', () => {
 	test.each( [
 		[ 'wp-block-sixa-spacer', 'wp-block-sixa-spacer' ],
 		[ 'wp-block-sixa-spacer123', 'wp-block-sixa-spacer123' ],
-		[ 'wp-block-sixa-spacer__123', 'wp-block-sixa-spacer__123' ],
+		[ 'wp-block-sixa__spacer', 'wp-block-sixa__spacer' ],
 		[ 'test-wp-block-sixa-spacer', 'wp-block-sixa-spacer' ], // Containing prefix
 		[ 'wp-block-sixa-spacer#', 'wp-block-sixa-spacer#' ], // Containing special character
 		[ 'wp-block-sixa-spacer test-class-name', 'wp-block-sixa-spacer' ],
@@ -19,7 +19,7 @@ describe( 'Matching RegEx pattern against a valid input string and return first 
 	} );
 } );
 
-describe( 'Matching RegEx pattern against an invalid input', () => {
+describe( "Return primitive 'undefined' for invalid block specific string", () => {
 	test.each( [
 		[ 'wp--block-sixa-spacer', undefined ],
 		[ 'wp-\block-sixa-spacer', undefined ],
