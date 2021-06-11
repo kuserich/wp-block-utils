@@ -5,7 +5,7 @@
  */
 import backgroundImageStyle from '../';
 
-describe( "Returns object with valid 'backgroundImage' CSS style for vaild URL or local path string", () => {
+describe( 'Returns a valid inline style for background image with a valid URL', () => {
 	test.each( [
 		[
 			'https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png',
@@ -27,7 +27,7 @@ describe( "Returns object with valid 'backgroundImage' CSS style for vaild URL o
 	} );
 } );
 
-describe( "Returns object with invalid 'backgroundImage' CSS style for invaild URL", () => {
+describe( 'Returns an invalid inline style for background image with an invalid URL', () => {
 	test.each( [
 		[ {}, { backgroundImage: 'url([object Object])' } ],
 		[ true, { backgroundImage: 'url(true)' } ],
