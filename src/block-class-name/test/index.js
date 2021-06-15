@@ -5,13 +5,12 @@
  */
 import blockClassName from '../';
 
-describe( 'Return string with single CSS class name for valid block specific string', () => {
+describe( 'Return string with single CSS class name for the first match of valid block specific string', () => {
 	test.each( [
 		[ 'wp-block-sixa-spacer', 'wp-block-sixa-spacer' ],
 		[ 'wp-block-sixa-spacer123', 'wp-block-sixa-spacer123' ],
 		[ 'wp-block-sixa__spacer', 'wp-block-sixa__spacer' ],
 		[ 'test-wp-block-sixa-spacer', 'wp-block-sixa-spacer' ], // Containing prefix
-		[ 'wp-block-sixa-spacer#', 'wp-block-sixa-spacer#' ], // Containing special character
 		[ 'wp-block-sixa-spacer test-class-name', 'wp-block-sixa-spacer' ],
 		[ 'wp-block-sixa-spacer wp-block-sixa-container', 'wp-block-sixa-spacer' ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
@@ -22,7 +21,6 @@ describe( 'Return string with single CSS class name for valid block specific str
 describe( "Return primitive 'undefined' for invalid block specific string", () => {
 	test.each( [
 		[ 'wp--block-sixa-spacer', undefined ],
-		[ 'wp-\block-sixa-spacer', undefined ],
 		[ [ '' ], undefined ],
 		[ '', undefined ],
 		[ [], undefined ],
