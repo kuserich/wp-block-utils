@@ -6,24 +6,18 @@
 import deepPick from '../';
 
 /**
- * Example function used as object value.
+ * Valid collection object.
  *
- * @return {string}          Returns example string.
  * @ignore
  */
-const exampleFunction = () => {
-	return 'Hello World!';
-};
+const validCollection = { id: 1, title: { value: 100, label: { name: 'example' } } };
 
 describe( 'Returns object with valid key/value pair for valid collection object with array path', () => {
 	test.each( [
-		[ { '': 1 }, [ '' ], { '': 1 } ],
-		[ { id: 1 }, [ 'id' ], { id: 1 } ],
-		[ { id: true }, [ 'id' ], { id: true } ],
-		[ { id: exampleFunction() }, [ 'id' ], { id: 'Hello World!' } ],
-		[ { id: 1, title: { value: 'Example' } }, [ 'title.value' ], { title: 'Example' } ],
-		[ { id: 1, title: { value: { name: 'Example' } } }, [ 'title.value.name' ], { title: 'Example' } ],
-		[ { id: 1, title: { value: 'Example' } }, [ 'title.rendered' ], { title: undefined } ],
+		[ validCollection, [ 'id' ], { id: 1 } ],
+		[ validCollection, [ 'title.label.name' ], { title: 'example' } ],
+		[ validCollection, [ 'title.rendered' ], { title: undefined } ],
+		[ validCollection, [ 'id', 'title.label.name' ], { id: 1, title: 'example' } ],
 	] )( 'when given %p with path %p it returns %p', ( collection, path, expected ) => {
 		expect( deepPick( collection, path ) ).toStrictEqual( expected );
 	} );
