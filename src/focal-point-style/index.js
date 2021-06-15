@@ -11,8 +11,8 @@ import { get, round, multiply } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {Object} value           Focal point object value.
- * @return 	  {string}                 Calculated X and Y position based on the focalpoint object provided.
+ * @param  	  {Object}    value    Focal point object value.
+ * @return 	  {string}             Calculated X and Y position based on the focalpoint object provided.
  * @example
  *
  * focalPointStyle( { x: 0.67, y: 0.65 } );

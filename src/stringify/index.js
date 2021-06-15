@@ -10,8 +10,8 @@ import { attempt } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {Object} input            The value to convert to a JSON object.
- * @return 	  {string}                  Converted value to string.
+ * @param  	  {Object}    input    The value to convert to a JSON object.
+ * @return 	  {string}             Converted value to string.
  * @example
  *
  * stringify( [ { id: 1, title: 'sunt aut facere' }, { id: 2, title: 'qui est esse' } ] );

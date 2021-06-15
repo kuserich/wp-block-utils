@@ -13,8 +13,8 @@ import { split, join } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} input          String to convert.
- * @return 	  {string}                Converted value.
+ * @param  	  {string}    input    String to convert.
+ * @return 	  {string}             Converted value.
  * @example
  *
  * spaceToNbsp( 'Hello World! This is an example.' );

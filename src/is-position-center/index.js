@@ -10,8 +10,8 @@ import { isEqual } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string}  position            The value to check.
- * @return 	  {boolean}                     Return true if content is center positioned.
+ * @param  	  {string}    position    The value to check.
+ * @return 	  {boolean}               Return true if content is center positioned.
  * @example
  *
  * isPositionCenter( 'center' );
