@@ -30,7 +30,6 @@ describe( 'Returns empty string for invalid style string', () => {
 	test.each( [
 		[ 'IS-style-fancy', '' ],
 		[ 'test-class-name', '' ],
-		[ 'is-style-\fancy', '' ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( blockStyleSlug( input ) ).toStrictEqual( expected );
 	} );
@@ -38,7 +37,6 @@ describe( 'Returns empty string for invalid style string', () => {
 
 describe( 'Returns empty string for falseful and empty values', () => {
 	test.each( [
-		[ [ '' ], '' ],
 		[ '', '' ],
 		[ [], '' ],
 		[ {}, '' ],
