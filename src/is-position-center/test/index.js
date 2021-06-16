@@ -26,15 +26,26 @@ describe( "Returns boolean primitive 'true' for falseful value", () => {
 	} );
 } );
 
-describe( "Returns boolean primitive 'false' for invalid string or empty value", () => {
+describe( "Returns boolean primitive 'false' for invalid string", () => {
 	test.each( [
 		[ 'Center', false ],
 		[ 'center  center', false ],
 		[ 'center center center', false ],
-		[ [ '' ], false ],
+	] )( 'when given %p it returns %p', ( input, expected ) => {
+		expect( isPositionCenter( input ) ).toBe( expected );
+	} );
+} );
+
+describe( "Returns boolean primitive 'false' for value 'true'", () => {
+	test.each( [ [ true, false ] ] )( 'when given %p it returns %p', ( input, expected ) => {
+		expect( isPositionCenter( input ) ).toBe( expected );
+	} );
+} );
+
+describe( "Returns boolean primitive 'false' for empty value", () => {
+	test.each( [
 		[ [], false ],
 		[ {}, false ],
-		[ true, false ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( isPositionCenter( input ) ).toBe( expected );
 	} );
