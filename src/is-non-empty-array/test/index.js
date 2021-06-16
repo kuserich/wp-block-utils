@@ -10,13 +10,6 @@ describe( "Return boolean primitive 'true' for a non-empty array object", () => 
 		[ [ '1', 2, true ], true ],
 		[ [ { id: 'a' } ], true ],
 		[ [ '' ], true ],
-		[
-			[
-				[ '1', '2' ],
-				[ '3', '4' ],
-			],
-			true,
-		],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( isNonEmptyArray( input ) ).toStrictEqual( expected );
 	} );
