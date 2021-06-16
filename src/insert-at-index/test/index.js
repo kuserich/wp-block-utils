@@ -18,7 +18,9 @@ const exampleValueFunction = () => {
 describe( 'Returns a valid array for a valid input with a valid value and index', () => {
 	test.each( [
 		[ [ 'a', 'd', 'c' ], 'b', 1, [ 'a', 'b', 'c' ] ],
-		[ [ 'a', 'b', 'c' ], '', 1, [ 'a', '', 'c' ] ],
+		[ [ 'a', 'd', 'c' ], 'b', 0, [ 'b', 'd', 'c' ] ],
+		[ [ 'a', 'd', 'c' ], 'b', Array.length - 1, [ 'b', 'd', 'c' ] ],
+		[ [ 'a', 'd', 'c' ], 'b', Array.length, [ 'a', 'b', 'c' ] ],
 		[ [ 'a', 'd', 'c' ], [ 'b' ], 1, [ 'a', 'b', 'c' ] ],
 		[ [ 'a', 'd', 'c' ], [ [ 'b' ] ], 1, [ 'a', [ 'b' ], 'c' ] ],
 		[ [ 'a', 'd', 'c' ], { id: 'b' }, 1, [ 'a', { id: 'b' }, 'c' ] ],
