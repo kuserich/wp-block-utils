@@ -9,8 +9,8 @@ describe( 'Returns a valid array for a valid input array with a valid index', ()
 	test.each( [
 		[ [ 'a', 'd', 'b' ], 1, [ 'a', 'b' ] ],
 		[ [ 'a', [ 'd' ], 'b' ], 1, [ 'a', 'b' ] ],
-		// [ [ [ 'a', [ 'd' ], 'b' ] ], 1, [ [ 'a', [ 'd' ], 'b' ] ] ], // Array of arrays
 		[ [ 'a', 'd', 'b' ], [ 1 ], [ 'a', 'b' ] ],
+		[ [ [ 'a', [ 'd' ], 'b' ] ], 1, [ [ 'a', [ 'd' ], 'b' ] ] ], // Array of arrays
 	] )( 'when given %p with index %p it returns %p', ( input, index, expected ) => {
 		expect( removeAtIndex( input, index ) ).toStrictEqual( expected );
 	} );
