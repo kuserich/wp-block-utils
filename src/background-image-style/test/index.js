@@ -5,7 +5,7 @@
  */
 import backgroundImageStyle from '../';
 
-describe( 'Returns a valid inline style object for background-image with a valid URL', () => {
+describe( 'Returns a valid inline style object for backgroundImage with a valid URL', () => {
 	test.each( [
 		[
 			'https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png',
@@ -18,12 +18,12 @@ describe( 'Returns a valid inline style object for background-image with a valid
 		[ 'mdn.mozilla.net/media/examples/lizard.png', { backgroundImage: 'url(mdn.mozilla.net/media/examples/lizard.png)' } ],
 		[ '/media/image/lizard.png', { backgroundImage: 'url(/media/image/lizard.png)' } ],
 		[ './../media/image/lizard.png', { backgroundImage: 'url(./../media/image/lizard.png)' } ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
+	] )( 'when given %s it returns %s', ( input, expected ) => {
 		expect( backgroundImageStyle( input ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( 'Returns an invalid inline style object for background-image with an invalid URL', () => {
+describe( 'Returns an invalid inline style object for backgroundImage with an invalid URL', () => {
 	test.each( [
 		[ {}, { backgroundImage: 'url([object Object])' } ],
 		[ true, { backgroundImage: 'url(true)' } ],
@@ -37,11 +37,14 @@ describe( 'Returns an invalid inline style object for background-image with an i
 
 describe( 'Returns empty object for falseful inputs', () => {
 	test.each( [
-		[ '', {} ],
-		[ 0, {} ],
+		[ false, {} ],
 		[ null, {} ],
 		[ undefined, {} ],
-		[ false, {} ],
+		[ 0, {} ],
+		[ -0, {} ],
+		[ 0n, {} ],
+		[ NaN, {} ],
+		[ '', {} ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( backgroundImageStyle( input ) ).toStrictEqual( expected );
 	} );
