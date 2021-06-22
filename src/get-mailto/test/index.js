@@ -23,7 +23,6 @@ describe( 'Returns array with all email addresses for valid mailto string with s
 	it.each( [
 		[ 'mailto:info@example.com,another@example.com', [ 'info@example.com', 'another@example.com' ] ],
 		[ 'mailto:info@example.com, another@example.com', [ 'info@example.com', 'another@example.com' ] ],
-		[ 'mailto:info@example.com another@example.com', [ 'info@example.com', 'another@example.com' ] ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
