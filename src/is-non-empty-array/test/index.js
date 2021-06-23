@@ -5,27 +5,30 @@
  */
 import isNonEmptyArray from '../';
 
-describe( "Return boolean primitive 'true' for a non-empty array object", () => {
-	test.each( [
+describe( 'Should return boolean primitive "true" for a non-empty array object', () => {
+	it.each( [
 		[ [ '1', 2, true ], true ],
 		[ [ { id: 'a' } ], true ],
 		[ [ '' ], true ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( isNonEmptyArray( input ) ).toStrictEqual( expected );
+		expect( isNonEmptyArray( input ) ).toBe( expected );
 	} );
 } );
 
-describe( "Return boolean primitive 'false' for empty or falseful values", () => {
-	test.each( [
+describe( 'Should return boolean primitive "false" for empty or falseful values', () => {
+	it.each( [
 		[ [], false ],
 		[ {}, false ],
 		[ 0, false ],
+		[ -0, false ],
+		[ 0n, false ],
+		[ NaN, false ],
 		[ 1, false ],
 		[ '', false ],
 		[ false, false ],
 		[ null, false ],
 		[ undefined, false ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( isNonEmptyArray( input ) ).toStrictEqual( expected );
+		expect( isNonEmptyArray( input ) ).toBe( expected );
 	} );
 } );
