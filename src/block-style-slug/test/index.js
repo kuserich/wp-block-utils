@@ -5,48 +5,43 @@
  */
 import blockStyleSlug from '../';
 
-describe( 'Returns string with slug for valid style string', () => {
+describe( 'Should extract a valid block style name from a given string of CSS class name(s)', () => {
 	test.each( [
 		[ 'is-style-fancy', 'fancy' ],
 		[ 'is-style-fancy123', 'fancy123' ],
 		[ 'is-style-ALLCAPS', 'ALLCAPS' ],
 		[ 'is-style-special_char', 'special_char' ],
-		[ 'test-is-style-with-prefix', 'with-prefix' ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( blockStyleSlug( input ) ).toStrictEqual( expected );
-	} );
-} );
-
-describe( 'Returns string with slug for valid style string with separated class names', () => {
-	test.each( [
 		[ 'test-class-name is-style-fancy', 'fancy' ],
 		[ 'class-nameis-style-fancy', 'fancy' ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( blockStyleSlug( input ) ).toStrictEqual( expected );
+	] )( 'when given %s it returns %s', ( input, expected ) => {
+		expect( blockStyleSlug( input ) ).toBe( expected );
 	} );
 } );
 
-describe( 'Returns empty string for invalid style string', () => {
+describe( 'Should return an empty string when none of the given string argument of CSS class name(s) includes block style class name', () => {
 	test.each( [
 		[ 'IS-style-fancy', '' ],
 		[ 'test-class-name', '' ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( blockStyleSlug( input ) ).toStrictEqual( expected );
+	] )( 'when given %s it returns %s', ( input, expected ) => {
+		expect( blockStyleSlug( input ) ).toBe( expected );
 	} );
 } );
 
-describe( 'Returns empty string for falseful and empty values', () => {
+describe( 'Should return empty string for falseful and empty values', () => {
 	test.each( [
+		[ false, '' ],
+		[ true, '' ],
+		[ null, '' ],
+		[ undefined, '' ],
+		[ 0, '' ],
+		[ -0, '' ],
+		[ 0n, '' ],
+		[ NaN, '' ],
+		[ 1, '' ],
 		[ '', '' ],
 		[ [], '' ],
 		[ {}, '' ],
-		[ null, '' ],
-		[ undefined, '' ],
-		[ false, '' ],
-		[ true, '' ],
-		[ 0, '' ],
-		[ 1, '' ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( blockStyleSlug( input ) ).toStrictEqual( expected );
+	] )( 'when given %p it returns %s', ( input, expected ) => {
+		expect( blockStyleSlug( input ) ).toBe( expected );
 	} );
 } );
