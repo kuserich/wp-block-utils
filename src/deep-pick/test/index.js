@@ -12,7 +12,7 @@ import deepPick from '../';
  */
 const validCollection = { id: 1, title: { value: 100, label: { name: 'example' } } };
 
-describe( 'Returns object with valid key/value pair for valid collection object with array path', () => {
+describe( 'Should return object with valid key/value pair for valid collection object with array path', () => {
 	test.each( [
 		[ validCollection, [ 'id' ], { id: 1 } ],
 		[ validCollection, [ 'title.label.name' ], { title: 'example' } ],
@@ -23,7 +23,7 @@ describe( 'Returns object with valid key/value pair for valid collection object 
 	} );
 } );
 
-describe( "Returns object with value 'undefined' for empty or falseful collection object", () => {
+describe( 'Should return object with value "undefined" for empty or falseful collection object', () => {
 	test.each( [
 		[ {}, [ 'id' ], { id: undefined } ],
 		[ [], [ 'id' ], { id: undefined } ],
@@ -37,7 +37,7 @@ describe( "Returns object with value 'undefined' for empty or falseful collectio
 	} );
 } );
 
-describe( 'Returns an empty object for empty or falseful array path', () => {
+describe( 'Should return an empty object for empty or falseful array path', () => {
 	test.each( [
 		[ { id: 1 }, [], {} ],
 		[ { id: 1 }, {}, {} ],
