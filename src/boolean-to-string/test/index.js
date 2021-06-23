@@ -5,7 +5,7 @@
  */
 import booleanToString from '../';
 
-describe( "Converts a boolean primitive to a 'yes' or 'no' string", () => {
+describe( 'Converts a boolean primitive to a "yes" or "no" string', () => {
 	test.each( [
 		[ true, 'yes' ],
 		[ false, 'no' ],
@@ -14,7 +14,7 @@ describe( "Converts a boolean primitive to a 'yes' or 'no' string", () => {
 	} );
 } );
 
-describe( "Converts other truthful values to boolean primitive 'true'", () => {
+describe( 'Converts other truthful values to boolean primitive "true"', () => {
 	test.each( [
 		[ 'yes', true ],
 		[ 'true', true ],
@@ -26,7 +26,7 @@ describe( "Converts other truthful values to boolean primitive 'true'", () => {
 	} );
 } );
 
-describe( "Converts any other input to boolean primitive 'false'", () => {
+describe( 'Converts any other input to boolean primitive "false"', () => {
 	test.each( [
 		[ '', false ],
 		[ '0', false ],
