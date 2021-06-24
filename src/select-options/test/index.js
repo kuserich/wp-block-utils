@@ -5,8 +5,8 @@
  */
 import selectOptions from '../';
 
-describe( "Returns array of objects for valid post objects array with valid property path and no custom 'none' option value", () => {
-	test.each( [
+describe( 'Should return array of objects for valid post objects array with valid property path and no custom "none" option value', () => {
+	it.each( [
 		[ [ { id: 1 }, { id: 2 } ], { id: 'value' }, [ { value: '', label: '— Select —' }, { value: 1 }, { value: 2 } ] ],
 		[
 			[
@@ -32,13 +32,13 @@ describe( "Returns array of objects for valid post objects array with valid prop
 				{ value: 2, label: 'qui est esse' },
 			],
 		],
-	] )( 'when given %p with path %p it returns %p', ( input, paths, expected ) => {
+	] )( 'when given %o with path %o it returns %o', ( input, paths, expected ) => {
 		expect( selectOptions( input, paths ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( "Returns array of objects for valid post objects array with valid property path and empty 'none' option value", () => {
-	test.each( [
+describe( 'Should return array of objects for valid post objects array with valid property path and empty "none" option value', () => {
+	it.each( [
 		[ [ { id: 1 }, { id: 2 } ], { id: 'value' }, { value: '', label: '' }, [ { value: '', label: '' }, { value: 1 }, { value: 2 } ] ],
 		[
 			[
@@ -53,26 +53,26 @@ describe( "Returns array of objects for valid post objects array with valid prop
 				{ value: 2, label: 'qui est esse' },
 			],
 		],
-	] )( 'when given %p with path %p and none %p it returns %p', ( input, paths, none, expected ) => {
+	] )( 'when given %o with path %o and none %o it returns %o', ( input, paths, none, expected ) => {
 		expect( selectOptions( input, paths, none ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( "Returns invalid array of objects for invalid post objects array with valid property path and no custom 'none' option value", () => {
-	test.each( [
+describe( 'Should return invalid array of objects for invalid post objects array with valid property path and no custom "none" option value', () => {
+	it.each( [
 		[ [], { id: 'value' }, [ { value: '', label: '— Select —' } ] ],
 		[ {}, { id: 'value' }, [ { value: '', label: '— Select —' } ] ],
 		[ false, { id: 'value' }, [ { value: '', label: '— Select —' } ] ],
 		[ true, { id: 'value' }, [ { value: '', label: '— Select —' } ] ],
 		[ undefined, { id: 'value' }, [ { value: '', label: '— Select —' } ] ],
 		[ null, { id: 'value' }, [ { value: '', label: '— Select —' } ] ],
-	] )( 'when given %p with path %p it returns %p', ( input, paths, expected ) => {
+	] )( 'when given %p with path %o it returns %o', ( input, paths, expected ) => {
 		expect( selectOptions( input, paths ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( "Returns invalid array of objects with value 'undefined' for valid post objects array with invalid property path and no custom 'none' option value", () => {
-	test.each( [
+describe( 'Should return invalid array of objects with value "undefined" for valid post objects array with invalid property path and no custom "none" option value', () => {
+	it.each( [
 		[ [ { id: 1 } ], { name: 'value' }, [ { value: '', label: '— Select —' }, { value: undefined } ] ],
 		[
 			[
@@ -86,13 +86,13 @@ describe( "Returns invalid array of objects with value 'undefined' for valid pos
 				{ value: 2, label: undefined },
 			],
 		],
-	] )( 'when given %p with path %p it returns %p', ( input, paths, expected ) => {
+	] )( 'when given %o with path %o it returns %o', ( input, paths, expected ) => {
 		expect( selectOptions( input, paths ) ).toStrictEqual( expected );
 	} );
 } );
 
-describe( "Returns empty object for valid post objects array with empty or falseful value path and no custom 'none' option value", () => {
-	test.each( [
+describe( 'Should return empty object for valid post objects array with empty or falseful value path and no custom "none" option value', () => {
+	it.each( [
 		[ [ { id: 1 } ], {}, [ { value: '', label: '— Select —' }, {} ] ],
 		[ [ { id: 1 } ], [], [ { value: '', label: '— Select —' }, {} ] ],
 		[ [ { id: 1 } ], undefined, [ { value: '', label: '— Select —' }, {} ] ],
@@ -100,7 +100,10 @@ describe( "Returns empty object for valid post objects array with empty or false
 		[ [ { id: 1 } ], false, [ { value: '', label: '— Select —' }, {} ] ],
 		[ [ { id: 1 } ], true, [ { value: '', label: '— Select —' }, {} ] ],
 		[ [ { id: 1 } ], 0, [ { value: '', label: '— Select —' }, {} ] ],
-	] )( 'when given %p with path %p it returns %p', ( input, paths, expected ) => {
+		[ [ { id: 1 } ], -0, [ { value: '', label: '— Select —' }, {} ] ],
+		[ [ { id: 1 } ], 0n, [ { value: '', label: '— Select —' }, {} ] ],
+		[ [ { id: 1 } ], NaN, [ { value: '', label: '— Select —' }, {} ] ],
+	] )( 'when given %o with path %p it returns %o', ( input, paths, expected ) => {
 		expect( selectOptions( input, paths ) ).toStrictEqual( expected );
 	} );
 } );
