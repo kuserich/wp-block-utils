@@ -5,7 +5,7 @@
  */
 import getMailTo from '../';
 
-describe( 'Should return an array with single email address for valid mailto string', () => {
+describe( 'Should return an array with a single email when given a valid `mailto` attribute (string) value', () => {
 	it.each( [
 		[ 'mailto:info@example.com', [ 'info@example.com' ] ],
 		[ 'mailto:info@example.com,', [ 'info@example.com' ] ], // Dangling comma
@@ -19,7 +19,7 @@ describe( 'Should return an array with single email address for valid mailto str
 	} );
 } );
 
-describe( 'Should return an array with all email addresses for valid mailto string with separated email addresses', () => {
+describe( 'Should return an array of valid emails being extracted from the `mailto` attribute (string) value', () => {
 	it.each( [
 		[ 'mailto:info@example.com,another@example.com', [ 'info@example.com', 'another@example.com' ] ],
 		[ 'mailto:info@example.com, another@example.com', [ 'info@example.com', 'another@example.com' ] ],
@@ -28,7 +28,7 @@ describe( 'Should return an array with all email addresses for valid mailto stri
 	} );
 } );
 
-describe( 'Should return "null" for invalid mailto string where no substring matches an email pattern', () => {
+describe( 'Should return `null` when given an invalid `mailto` attribute value where no substring matches a valid email pattern', () => {
 	it.each( [
 		[ 'mailto', null ],
 		[ 'mailto:info@example', null ],
@@ -40,7 +40,7 @@ describe( 'Should return "null" for invalid mailto string where no substring mat
 	} );
 } );
 
-describe( 'Should return "null" for falseful and empty values', () => {
+describe( 'Should return `null` when given falsely argument including but not limited to an array, object, or an empty array', () => {
 	it.each( [
 		[ [ '' ], null ],
 		[ [], null ],
