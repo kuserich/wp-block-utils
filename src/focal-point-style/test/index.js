@@ -35,7 +35,7 @@ describe( 'Should return a valid x/y coordinate percentage, not floored or ceile
 	} );
 } );
 
-describe( 'Should return a valid x/y coordinate percentage with maximum allowed values of the given falseful or empty background image’s position', () => {
+describe( 'Should return `100% 100%` when given falsely argument including but not limited to an array, object, or an empty array', () => {
 	it.each( [
 		[ [ '' ], '100% 100%' ],
 		[ '', '100% 100%' ],
