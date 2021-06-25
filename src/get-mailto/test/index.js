@@ -14,7 +14,7 @@ describe( 'Should return array with single email address for valid mailto string
 		[ 'mailto:mail-with-dash@domain-with-dash.com', [ 'mail-with-dash@domain-with-dash.com' ] ],
 		[ 'mailto:ALLCAPS@EXAMPLE.COM', [ 'ALLCAPS@EXAMPLE.COM' ] ],
 		[ 'mailto:info1234@example1234.com', [ 'info1234@example1234.com' ] ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
+	] )( 'when given %s it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
 } );
@@ -23,7 +23,7 @@ describe( 'Should return array with all email addresses for valid mailto string 
 	it.each( [
 		[ 'mailto:info@example.com,another@example.com', [ 'info@example.com', 'another@example.com' ] ],
 		[ 'mailto:info@example.com, another@example.com', [ 'info@example.com', 'another@example.com' ] ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
+	] )( 'when given %s it returns %p', ( input, expected ) => {
 		expect( getMailTo( input ) ).toStrictEqual( expected );
 	} );
 } );
@@ -35,8 +35,8 @@ describe( 'Should return null for invalid mailto string where no substring match
 		[ 'mailto:info@example.', null ],
 		[ 'mailto:@example.com', null ],
 		[ 'mailto:example.com', null ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( getMailTo( input ) ).toStrictEqual( expected );
+	] )( 'when given %s it returns %p', ( input, expected ) => {
+		expect( getMailTo( input ) ).toBe( expected );
 	} );
 } );
 
@@ -47,12 +47,14 @@ describe( 'Should return primitive "null" for falseful and empty values', () => 
 		[ {}, null ],
 		[ '', null ],
 		[ 0, null ],
+		[ -0, null ],
+		[ NaN, null ],
 		[ 1, null ],
 		[ true, null ],
 		[ false, null ],
 		[ undefined, null ],
 		[ null, null ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( getMailTo( input ) ).toStrictEqual( expected );
+		expect( getMailTo( input ) ).toBe( expected );
 	} );
 } );
