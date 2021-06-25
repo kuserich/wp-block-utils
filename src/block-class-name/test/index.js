@@ -6,7 +6,7 @@
 import blockClassName from '../';
 
 describe( 'Should return string with single CSS class name when a given argument contains a valid string of CSS class name(s)', () => {
-	test.each( [
+	it.each( [
 		[ 'wp-block-sixa-spacer', 'wp-block-sixa-spacer' ],
 		[ 'wp-block-sixa-spacer123', 'wp-block-sixa-spacer123' ],
 		[ 'wp-block-sixa__spacer', 'wp-block-sixa__spacer' ],
@@ -18,15 +18,13 @@ describe( 'Should return string with single CSS class name when a given argument
 } );
 
 describe( 'Should return string with single CSS class name when a given argument contains multiple valid strings of CSS class names', () => {
-	test.each( [
-		[ 'wp-block-sixa-spacer wp-block-sixa-container', 'wp-block-sixa-spacer' ],
-	] )( 'when given %s it returns %s', ( input, expected ) => {
+	it.each( [ [ 'wp-block-sixa-spacer wp-block-sixa-container', 'wp-block-sixa-spacer' ] ] )( 'when given %s it returns %s', ( input, expected ) => {
 		expect( blockClassName( input ) ).toBe( expected );
 	} );
 } );
 
-describe( 'Should return primitive "undefined" when a given argument doesn’t contain a valid string of CSS class name(s)', () => {
-	test.each( [
+describe( 'Should return "undefined" when a given argument doesn’t contain a valid string of CSS class name(s)', () => {
+	it.each( [
 		[ 'wp--block-sixa-spacer', undefined ],
 		[ [ '' ], undefined ],
 		[ '', undefined ],
