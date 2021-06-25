@@ -5,8 +5,8 @@
  */
 import focalPointStyle from '../';
 
-describe( 'Should return valid string with X and Y values calculated for valid object input', () => {
-	test.each( [
+describe( 'Should return a valid x/y coordinate percentage of the given background image’s position', () => {
+	it.each( [
 		[ { x: 0.25 }, '25% 100%' ],
 		[ { y: 0.45 }, '100% 45%' ],
 		[ { x: 1, y: 0 }, '100% 0%' ],
@@ -16,8 +16,8 @@ describe( 'Should return valid string with X and Y values calculated for valid o
 	} );
 } );
 
-describe( 'Should return valid string with X and Y values calculated for empty or incomplete object input', () => {
-	test.each( [
+describe( 'Should return a valid x/y coordinate percentage of the given empty or incomplete background image’s position', () => {
+	it.each( [
 		[ {}, '100% 100%' ],
 		[ { x: 0.25 }, '25% 100%' ],
 		[ { y: 0.45 }, '100% 45%' ],
@@ -26,8 +26,8 @@ describe( 'Should return valid string with X and Y values calculated for empty o
 	} );
 } );
 
-describe( 'Should return valid string with X and Y values, not floored or ceiled, for valid object input', () => {
-	test.each( [
+describe( 'Should return a valid x/y coordinate percentage, not floored or ceiled, of the given background image’s position', () => {
+	it.each( [
 		[ { x: 1.5, y: 2.7 }, '150% 270%' ],
 		[ { x: -1, y: -3.141 }, '-100% -314%' ],
 	] )( 'when given %o it returns %s', ( input, expected ) => {
@@ -35,8 +35,8 @@ describe( 'Should return valid string with X and Y values, not floored or ceiled
 	} );
 } );
 
-describe( 'Should return string with maximum allowed X and Y values for falseful or empty values', () => {
-	test.each( [
+describe( 'Should return a valid x/y coordinate percentage with maximum allowed values of the given falseful or empty background image’s position', () => {
+	it.each( [
 		[ [ '' ], '100% 100%' ],
 		[ '', '100% 100%' ],
 		[ [], '100% 100%' ],
