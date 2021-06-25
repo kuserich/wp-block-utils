@@ -16,7 +16,7 @@ describe( 'Should return a string CSS class name given an integer dim ratio', ()
 	} );
 } );
 
-describe( 'Should return a string CSS class name with rounded value given an integer or decimal dim ratio', () => {
+describe( 'Should return a string CSS class name given a numeric dim ratio rounded to precision', () => {
 	it.each( [
 		[ 65, 'has-background-dim-70' ],
 		[ 24.99, 'has-background-dim-20' ],
@@ -25,7 +25,7 @@ describe( 'Should return a string CSS class name with rounded value given an int
 	} );
 } );
 
-describe( 'Should return empty string given integer "0" or "50"', () => {
+describe( 'Should return an empty string given `0` or `50` as dim ratio', () => {
 	it.each( [
 		[ 0, '' ],
 		[ 50, '' ],
@@ -34,7 +34,7 @@ describe( 'Should return empty string given integer "0" or "50"', () => {
 	} );
 } );
 
-describe( 'Should return empty string for falseful and empty values', () => {
+describe( 'Should return `null` when given falsely argument', () => {
 	it.each( [
 		[ '', '' ],
 		[ null, '' ],
