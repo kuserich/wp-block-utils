@@ -35,4 +35,4 @@ describe( "Converts any other input to the boolean primitive 'false'", () => {
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( stringToBoolean( input ) ).toBe( expected );
 	} );
-});
+} );
