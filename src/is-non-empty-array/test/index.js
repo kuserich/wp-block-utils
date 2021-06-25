@@ -5,7 +5,7 @@
  */
 import isNonEmptyArray from '../';
 
-describe( 'Should return boolean primitive "true" for a non-empty array object', () => {
+describe( 'Should return boolean primitive `true` for a non-empty array object', () => {
 	it.each( [
 		[ [ '1', 2, true ], true ],
 		[ [ { id: 'a' } ], true ],
@@ -15,7 +15,7 @@ describe( 'Should return boolean primitive "true" for a non-empty array object',
 	} );
 } );
 
-describe( 'Should return boolean primitive "false" for empty or falseful values', () => {
+describe( 'Should return `false` for empty or non-arrays', () => {
 	it.each( [
 		[ [], false ],
 		[ {}, false ],
