@@ -25,7 +25,7 @@ describe( 'Should return an empty string when none of the given string argument 
 	} );
 } );
 
-describe( 'Should return empty string for falseful and empty values', () => {
+describe( 'Should return an empty string when given falsely argument', () => {
 	it.each( [
 		[ false, '' ],
 		[ true, '' ],
