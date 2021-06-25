@@ -11,6 +11,6 @@
  *
  * // => Object { backgroundImage: 'url(https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png)' }
  */
-const backgroundImageStyle = ( url ) => ( url ? { backgroundImage: `url(${ url })` } : {} );
+const backgroundImageStyle = ( url ) => ( url && url.match( /\w+\.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gim ) ? { backgroundImage: `url(${ url })` } : {} );
 
 export default backgroundImageStyle;
