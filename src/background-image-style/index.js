@@ -1,4 +1,11 @@
 /**
+ * Utility for libraries from the `Lodash`.
+ *
+ * @ignore
+ */
+import { isString } from 'lodash';
+
+/**
  * Generate inline background-image CSS style based on provided URL.
  *
  * @function
@@ -11,6 +18,7 @@
  *
  * // => Object { backgroundImage: 'url(https://interactive-examples.mdn.mozilla.net/media/examples/lizard.png)' }
  */
-const backgroundImageStyle = ( url ) => ( url && url.match( /\w+\.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gim ) ? { backgroundImage: `url(${ url })` } : {} );
+const backgroundImageStyle = ( url ) =>
+	isString( url ) && url.match( /\w+\.(jpg|jpeg|gif|png|tiff|bmp)(\?(.*))?$/gim ) ? { backgroundImage: `url(${ url })` } : {};
 
 export default backgroundImageStyle;
