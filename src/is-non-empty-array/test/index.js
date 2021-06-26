@@ -5,7 +5,7 @@
  */
 import isNonEmptyArray from '../';
 
-describe( 'Should return `true` for a non-empty array object', () => {
+describe( 'Should return `true` is classified as a non-empty array object', () => {
 	it.each( [
 		[ [ '1', 2, true ], true ],
 		[ [ { id: 'a' } ], true ],
@@ -15,7 +15,7 @@ describe( 'Should return `true` for a non-empty array object', () => {
 	} );
 } );
 
-describe( 'Should return `false` for empty or non-arrays', () => {
+describe( 'Should return `false` when given falsely argument including but not limited to an array, object, or an empty array', () => {
 	it.each( [
 		[ [], false ],
 		[ {}, false ],
