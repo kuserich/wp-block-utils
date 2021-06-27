@@ -7,8 +7,6 @@ import focalPointStyle from '../';
 
 describe( 'Should return a valid x/y coordinate percentage of the given background image’s position', () => {
 	it.each( [
-		[ { x: 0.25 }, '25% 100%' ],
-		[ { y: 0.45 }, '100% 45%' ],
 		[ { x: 1, y: 0 }, '100% 0%' ],
 		[ { x: 0.67, y: 0.65 }, '67% 65%' ],
 	] )( 'when given %o it returns %s', ( input, expected ) => {
@@ -26,7 +24,7 @@ describe( 'Should return a valid x/y coordinate percentage of the given empty or
 	} );
 } );
 
-describe( 'Should return a valid x/y coordinate percentage, not floored or ceiled, of the given background image’s position', () => {
+describe( 'Should return a valid x/y coordinate percentage, neither floored nor ceiled, of the given background image’s position', () => {
 	it.each( [
 		[ { x: 1.5, y: 2.7 }, '150% 270%' ],
 		[ { x: -1, y: -3.141 }, '-100% -314%' ],
