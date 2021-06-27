@@ -16,7 +16,7 @@ describe( 'Should extract a valid block style name from a given string of CSS cl
 	} );
 } );
 
-describe( 'Should return an empty string when none of the given string argument of CSS class name(s) includes block style class name', () => {
+describe( 'Should return an empty string if the given string argument does not include a block style class name', () => {
 	it.each( [
 		[ 'IS-style-fancy', '' ],
 		[ 'test-class-name', '' ],
