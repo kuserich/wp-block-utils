@@ -12,7 +12,7 @@ import deepPick from '../';
  */
 const validCollection = { id: 1, title: { value: 100, label: { name: 'example' } } };
 
-describe( 'Should return string keyed-value pairs object composed of the picked paths from data collection', () => {
+describe( 'Should return key-value pairs composed of the picked paths from data collection', () => {
 	test.each( [
 		[ validCollection, [ 'id' ], { id: 1 } ],
 		[ validCollection, [ 'title.label.name' ], { title: 'example' } ],
@@ -23,7 +23,7 @@ describe( 'Should return string keyed-value pairs object composed of the picked 
 	} );
 } );
 
-describe( 'Should return string keyed-value pairs object where the value of each key would be `undefined` when the object path given is not resolved', () => {
+describe( 'Should return key-value pairs where the value of each key is `undefined` if the given object path cannot be resolved', () => {
 	test.each( [
 		[ {}, [ 'id' ], { id: undefined } ],
 		[ [], [ 'id' ], { id: undefined } ],
