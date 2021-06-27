@@ -8,7 +8,6 @@ import dimRatioClassName from '../';
 describe( 'Should return a string CSS class name given an integer dim ratio', () => {
 	it.each( [
 		[ 1, 'has-background-dim-0' ],
-		[ 7, 'has-background-dim-10' ],
 		[ 30, 'has-background-dim-30' ],
 		[ 100, 'has-background-dim-100' ],
 	] )( 'when given %i it returns %s', ( input, expected ) => {
