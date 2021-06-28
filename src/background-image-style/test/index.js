@@ -23,7 +23,7 @@ describe( 'Should return a valid inline style object for backgroundImage with a 
 	} );
 } );
 
-describe( 'Should return an empty object for empty or falseful inputs', () => {
+describe( 'Should return an empty object when given falsely argument including but not limited to an array, object, or an empty array', () => {
 	it.each( [
 		[ '', {} ],
 		[ [ '' ], {} ],
