@@ -23,28 +23,21 @@ describe( 'Should return a valid inline style object for backgroundImage with a 
 	} );
 } );
 
-describe( 'Should return an invalid inline style object for backgroundImage with an invalid URL', () => {
+describe( 'Should return an empty object for empty or falseful inputs', () => {
 	it.each( [
-		[ {}, { backgroundImage: 'url([object Object])' } ],
-		[ true, { backgroundImage: 'url(true)' } ],
-		[ 1, { backgroundImage: 'url(1)' } ],
-		[ [ '' ], { backgroundImage: 'url()' } ],
-		[ [], { backgroundImage: 'url()' } ],
-	] )( 'when given %p it returns %o', ( input, expected ) => {
-		expect( backgroundImageStyle( input ) ).toStrictEqual( expected );
-	} );
-} );
-
-describe( 'Should return an empty object for falseful inputs', () => {
-	it.each( [
+		[ '', {} ],
+		[ [ '' ], {} ],
+		[ [], {} ],
+		[ {}, {} ],
+		[ true, {} ],
 		[ false, {} ],
 		[ null, {} ],
 		[ undefined, {} ],
+		[ 1, {} ],
 		[ 0, {} ],
 		[ -0, {} ],
 		[ 0n, {} ],
 		[ NaN, {} ],
-		[ '', {} ],
 	] )( 'when given %p it returns %p', ( input, expected ) => {
 		expect( backgroundImageStyle( input ) ).toStrictEqual( expected );
 	} );
