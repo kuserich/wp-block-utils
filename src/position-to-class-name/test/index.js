@@ -5,7 +5,7 @@
  */
 import positionToClassName from '../';
 
-describe( 'Should return content-position CSS class name string for string "center" or "center center"', () => {
+describe( 'Should return an empty string when given `center` or `center center` keyword(s) for x/y coordinates', () => {
 	it.each( [
 		[ 'center', '' ],
 		[ 'center center', '' ],
@@ -14,7 +14,7 @@ describe( 'Should return content-position CSS class name string for string "cent
 	} );
 } );
 
-describe( 'Should return content-position CSS class name string for other defined positions strings', () => {
+describe( 'Should return a valid CSS class name when given valid position keyword values', () => {
 	it.each( [
 		[ 'top left', 'is-position-top-left' ],
 		[ 'top center', 'is-position-top-center' ],
@@ -29,7 +29,7 @@ describe( 'Should return content-position CSS class name string for other define
 	} );
 } );
 
-describe( 'Should return primitive "undefined" for invalid string and empty value', () => {
+describe( 'Should return `undefined` when given unsupported position keyword(s) by CSS.', () => {
 	it.each( [
 		[ 'Top left', undefined ],
 		[ 'Top  left', undefined ],
@@ -43,7 +43,7 @@ describe( 'Should return primitive "undefined" for invalid string and empty valu
 	} );
 } );
 
-describe( 'Should return empty string for falseful value', () => {
+describe( 'Should return an empty string when given falsely argument', () => {
 	it.each( [
 		[ '', '' ],
 		[ null, '' ],
