@@ -5,7 +5,7 @@
  */
 import removeAtIndex from '../';
 
-describe( 'Should return a valid array for a valid input array with a valid index', () => {
+describe( 'Should return a spliced array with removed value at the given index', () => {
 	it.each( [
 		[ [ 'a', 'd', 'b' ], 1, [ 'a', 'b' ] ],
 		[ [ 'a', [ 'd' ], 'b' ], 1, [ 'a', 'b' ] ],
@@ -16,7 +16,7 @@ describe( 'Should return a valid array for a valid input array with a valid inde
 	} );
 } );
 
-describe( 'Should return an invalid array for an invalid input array with a valid index', () => {
+describe( 'Should return an empty array given falseful or empty value', () => {
 	it.each( [
 		[ [], 1, [] ],
 		[ {}, 1, [] ],
@@ -31,7 +31,7 @@ describe( 'Should return an invalid array for an invalid input array with a vali
 	} );
 } );
 
-describe( 'Should return an invalid array for a valid input array with invalid index', () => {
+describe( 'Should return an invalid array given an invalid index', () => {
 	it.each( [
 		[ [ 'a', 'd', 'b' ], 3, [ 'a', 'd', 'b' ] ],
 		[ [ 'a', 'd', 'b' ], -1, [ 'a', 'd', 'a', 'd', 'b' ] ],
@@ -45,7 +45,7 @@ describe( 'Should return an invalid array for a valid input array with invalid i
 	} );
 } );
 
-describe( 'Should return an invalid array for a valid input array with falseful or empty index', () => {
+describe( 'Should return an invalid array given a falseful or empty index', () => {
 	it.each( [
 		[ [ 'a', 'd', 'b' ], [], [ 'd', 'b' ] ],
 		[ [ 'a', 'd', 'b' ], {}, [ 'a', 'd', 'b' ] ],
