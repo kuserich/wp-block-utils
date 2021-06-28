@@ -18,6 +18,6 @@ import { isEqual } from 'lodash';
  *
  * // => boolean true
  */
-const isPositionCenter = ( position ) => ! position || isEqual( position, 'center center' ) || isEqual( position, 'center' );
+const isPositionCenter = ( position ) => isEqual( position, 'center center' ) || isEqual( position, 'center' );
 
 export default isPositionCenter;
