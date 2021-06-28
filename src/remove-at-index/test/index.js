@@ -31,7 +31,7 @@ describe( 'Should return an empty array given falseful or empty value', () => {
 	} );
 } );
 
-describe( 'Should return an invalid array given an invalid index', () => {
+describe( 'Should return an invalid array given a numerically invalid index', () => {
 	it.each( [
 		[ [ 'a', 'd', 'b' ], 3, [ 'a', 'd', 'b' ] ],
 		[ [ 'a', 'd', 'b' ], -1, [ 'a', 'd', 'a', 'd', 'b' ] ],
