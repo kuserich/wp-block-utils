@@ -6,9 +6,9 @@
  * this CSS property from MDN docs.
  *
  * @constant
- * @since 	 	1.0.0
- * @type        {Object}
- * @see         https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
+ * @since    1.0.0
+ * @type     {Object}
+ * @see      https://developer.mozilla.org/en-US/docs/Web/CSS/background-position
  * @ignore
  */
 export default {

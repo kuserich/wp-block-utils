@@ -10,8 +10,8 @@ import { replace, nth, invoke } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} classNames         CSS class names assigned to the block.
- * @return 	  {string}                    Style name associated or selected for this block.
+ * @param     {string}    classNames    CSS class names assigned to the block.
+ * @return    {string}                  Style name associated or selected for this block.
  * @example
  *
  * blockStyleSlug( 'wp-block-sixa-spacer is-style-fancy test-class-name' );

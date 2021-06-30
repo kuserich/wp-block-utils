@@ -10,8 +10,8 @@ import { isArray } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {Array} value         The value to check.
- * @return 	  {boolean}             Whether the argument provided is a non-empty array.
+ * @param  	  {Array}    value    The value to check.
+ * @return 	  {boolean}           Whether the argument provided is a non-empty array.
  * @example
  *
  * isNonEmptyArray( [] );

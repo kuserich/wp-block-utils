@@ -10,8 +10,8 @@ import { isBoolean, isEqual } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string|number} input           String to convert. If a bool is passed it will be returned as-is.
- * @return 	  {boolean}                       Converted value.
+ * @param  	  {string|number}    input    String to convert. If a bool is passed it will be returned as-is.
+ * @return 	  {boolean}                   Converted value.
  * @example
  *
  * stringToBoolean( 'yes' );
