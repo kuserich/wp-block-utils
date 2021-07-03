@@ -7,7 +7,9 @@ import removeAtIndex from '../';
 
 describe( 'Should remove item at given index', () => {
 	it.each( [
+		[ [ 'a', 'd', 'b' ], 0, [ 'd', 'b' ] ],
 		[ [ 'a', 'd', 'b' ], 1, [ 'a', 'b' ] ],
+		[ [ 'a', 'd', 'b' ], 2, [ 'a', 'd' ] ], // Remove at last index
 		[ [ 'a', [ 'd' ], 'b' ], 1, [ 'a', 'b' ] ],
 		[ [ 'a', 'd', 'b' ], [ 1 ], [ 'a', 'b' ] ],
 		[ [ [ 'a', [ 'd' ], 'b' ] ], 1, [ [ 'a', [ 'd' ], 'b' ] ] ], // Array of arrays
