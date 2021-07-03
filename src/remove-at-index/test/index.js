@@ -25,11 +25,17 @@ describe( 'Should remove item at given index', () => {
 		[ [ 'a', 'b', 'c' ], 1, [ 'a', 'c' ] ],
 		[ [ 'a', 'b', 'c' ], 2, [ 'a', 'b' ] ], // Remove at last index
 		[ [ 'a', [ 'x' ], 'c' ], 1, [ 'a', 'c' ] ],
-		[ [ [ 'x', [ 'A' ], 'z' ] ], 1, [ [ 'x', [ 'A' ], 'z' ] ] ], // Array of arrays
 	] )( 'when given %p with index %p it returns %p', ( input, index, expected ) => {
 		expect( removeAtIndex( input, index ) ).toStrictEqual( expected );
 	} );
 } );
+
+describe( 'removeAtIndex', () => {
+	it( 'Should not remove anything when given an index that is out of bounds', () => {
+		const testArray = [ 'a', 'b', 'c' ];
+		expect( removeAtIndex( testArray, testArray.length ) ).toStrictEqual( testArray );
+	});
+});
 
 describe( 'Should accept falsey arguments for index', () => {
 	const testArray = [ 'a', 'd', 'b' ];
