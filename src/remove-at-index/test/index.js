@@ -5,7 +5,7 @@
  */
 import removeAtIndex from '../';
 
-describe( 'Should return a spliced array with removed value at the given index', () => {
+describe( 'Should remove item at given index', () => {
 	it.each( [
 		[ [ 'a', 'd', 'b' ], 1, [ 'a', 'b' ] ],
 		[ [ 'a', [ 'd' ], 'b' ], 1, [ 'a', 'b' ] ],
