@@ -21,12 +21,11 @@ import { falsey, empties } from "../../utils";
 
 describe( 'Should remove item at given index', () => {
 	it.each( [
-		[ [ 'a', 'd', 'b' ], 0, [ 'd', 'b' ] ],
-		[ [ 'a', 'd', 'b' ], 1, [ 'a', 'b' ] ],
-		[ [ 'a', 'd', 'b' ], 2, [ 'a', 'd' ] ], // Remove at last index
-		[ [ 'a', [ 'd' ], 'b' ], 1, [ 'a', 'b' ] ],
-		[ [ 'a', 'd', 'b' ], [ 1 ], [ 'a', 'b' ] ],
-		[ [ [ 'a', [ 'd' ], 'b' ] ], 1, [ [ 'a', [ 'd' ], 'b' ] ] ], // Array of arrays
+		[ [ 'a', 'b', 'c' ], 0, [ 'b', 'c' ] ],
+		[ [ 'a', 'b', 'c' ], 1, [ 'a', 'c' ] ],
+		[ [ 'a', 'b', 'c' ], 2, [ 'a', 'b' ] ], // Remove at last index
+		[ [ 'a', [ 'x' ], 'c' ], 1, [ 'a', 'c' ] ],
+		[ [ [ 'x', [ 'A' ], 'z' ] ], 1, [ [ 'x', [ 'A' ], 'z' ] ] ], // Array of arrays
 	] )( 'when given %p with index %p it returns %p', ( input, index, expected ) => {
 		expect( removeAtIndex( input, index ) ).toStrictEqual( expected );
 	} );
