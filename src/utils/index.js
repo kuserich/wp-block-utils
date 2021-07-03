@@ -13,4 +13,4 @@ const empties = [ [], {}, null, undefined, false, 0, NaN, '' ];
  */
 const primitives = [ null, undefined, false, true, 1, NaN, 'a' ];
 
-export { falsey, empties, primitives};
+export { falsey, empties, primitives };

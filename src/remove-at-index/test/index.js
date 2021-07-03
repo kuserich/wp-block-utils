@@ -17,10 +17,9 @@ import removeAtIndex from '../';
  *
  * @ignore
  */
-import { falsey, empties } from "../../utils";
+import { falsey, empties } from '../../utils';
 
 describe( 'removeAtIndex', () => {
-
 	describe( 'Should remove item at given index', () => {
 		it.each( [
 			[ [ 'a', 'b', 'c' ], 0, [ 'b', 'c' ] ],
@@ -35,7 +34,7 @@ describe( 'removeAtIndex', () => {
 	it( 'Should not remove anything when given an index that is out of bounds', () => {
 		const testArray = [ 'a', 'b', 'c' ];
 		expect( removeAtIndex( testArray, testArray.length ) ).toStrictEqual( testArray );
-	});
+	} );
 
 	describe( 'Should accept falsey arguments for index', () => {
 		const testArray = [ 'a', 'd', 'b' ];
@@ -58,5 +57,4 @@ describe( 'removeAtIndex', () => {
 			expect.anything( removeAtIndex( [ 'a', 'b', 'c' ], -1 ) );
 		} );
 	} );
-
-});
+} );
