@@ -5,9 +5,11 @@
  */
 import slugify from '../';
 
-describe( 'Should return slugified and tag stripped string for valid input string', () => {
+describe( 'Should return slugified version of the string given by replacing whitespaces with dashes and escaping HTML elements', () => {
 	it.each( [
 		[ 'lorem ipsum', 'lorem-ipsum' ],
+		[ 'lorem 1234', 'lorem-1234' ],
+		[ 'LOREM IPSUM', 'lorem-ipsum' ],
 		[ 'lorem $ ipsum', 'lorem-dollar-ipsum' ],
 		[ 'lorem *_+~()!?—–−:@^|&#.,;%<>{} ipsum', 'lorem-orandpercent-ipsum' ],
 		[ '<a href="https://example.com"> lorem ipsum <strong>dolor</strong> </a>', 'lorem-ipsum-dolor' ],
@@ -18,7 +20,7 @@ describe( 'Should return slugified and tag stripped string for valid input strin
 	} );
 } );
 
-describe( 'Should return empty string for falseful or empty value', () => {
+describe( 'Should return empty string when given falsely argument including but not limited to an array, object, or an empty array', () => {
 	it.each( [
 		[ '', '' ],
 		[ [ '' ], '' ],
