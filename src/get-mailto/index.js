@@ -10,8 +10,8 @@ import { trim } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} mailto           The href attribute value.
- * @return 	  {Array}                   Extracted email-addresses from the provided href value.
+ * @param  	  {string}    mailto    The href attribute value.
+ * @return 	  {Array}               Extracted email-addresses from the provided href value.
  * @example
  *
  * getMailTo( 'mailto:info@example.com,info@test.com' );

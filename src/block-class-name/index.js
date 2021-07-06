@@ -11,8 +11,8 @@ import { nth, invoke } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} classNames         CSS class names assigned to the block.
- * @return 	  {string}                    CSS class name generated for the block.
+ * @param     {string}    classNames    CSS class names assigned to the block.
+ * @return    {string}                  CSS class name generated for the block.
  * @example
  *
  * blockClassName( 'wp-block-sixa-spacer custom-class-name test-class-name' );
