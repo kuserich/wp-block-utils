@@ -8,7 +8,7 @@ import { trim } from 'lodash';
 /**
  * HTML entity utilities for WordPress.
  *
- * @see     https://github.com/WordPress/gutenberg/blob/trunk/packages/html-entities/README.md
+ * @see    https://github.com/WordPress/gutenberg/blob/trunk/packages/html-entities/README.md
  * @ignore
  */
 import { decodeEntities } from '@wordpress/html-entities';
@@ -18,8 +18,8 @@ import { decodeEntities } from '@wordpress/html-entities';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} content         Post content.
- * @return 	  {string}                 Formatted post content.
+ * @param  	  {string}    content    Post content.
+ * @return 	  {string}               Formatted post content.
  * @example
  *
  * formattedContent( '<span class=\"amount\"><bdi><span class=\"currency\">&pound;<\/span>11.05<\/bdi><\/span>' );

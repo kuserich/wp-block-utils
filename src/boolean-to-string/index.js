@@ -17,8 +17,8 @@ import stringToBoolean from '../string-to-boolean';
  *
  * @function
  * @since     1.0.0
- * @param  	  {boolean|string} input           Bool to convert. If a string is passed it will first be converted to a bool.
- * @return 	  {string}                         Converted value.
+ * @param  	  {boolean|string}    input    Bool to convert. If a string is passed it will first be converted to a bool.
+ * @return 	  {string}                     Converted value.
  * @example
  *
  * booleanToString( true );

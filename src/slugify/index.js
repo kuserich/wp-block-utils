@@ -1,7 +1,7 @@
 /**
  * Slugifies every string, even when it contains unicode!
  *
- * @see     https://www.npmjs.com/package/slugify
+ * @see    https://www.npmjs.com/package/slugify
  * @ignore
  */
 import slug from 'slugify';
@@ -9,7 +9,7 @@ import slug from 'slugify';
 /**
  * An implementation of PHP's `strip_tags` in Node.js.
  *
- * @see     https://www.npmjs.com/package/striptags
+ * @see    https://www.npmjs.com/package/striptags
  * @ignore
  */
 import striptags from 'striptags';
@@ -20,8 +20,8 @@ import striptags from 'striptags';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} input            The value to slugify.
- * @return 	  {string}                  Converted value to slug.
+ * @param  	  {string}    input    The value to slugify.
+ * @return 	  {string}             Converted value to slug.
  * @example
  *
  * slugify( 'unicode is ♥' );
