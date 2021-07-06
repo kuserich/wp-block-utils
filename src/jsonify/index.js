@@ -10,8 +10,8 @@ import { attempt } from 'lodash';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} input            The string to parse as JSON.
- * @return 	  {Object}                  Converted value to object.
+ * @param  	  {string}    input    The string to parse as JSON.
+ * @return 	  {Object}             Converted value to object.
  * @example
  *
  * jsonify( '[{"id":1,"title":"sunt aut facere"},{"id":2,"title":"qui est esse"}]' );
