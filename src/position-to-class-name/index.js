@@ -24,8 +24,8 @@ import positions from './positions';
  *
  * @function
  * @since     1.0.0
- * @param  	  {string} value            CSS position value.
- * @return 	  {string}                  Corresponding CSS class name based on the provided position.
+ * @param  	  {string}    value    CSS position value.
+ * @return 	  {string}             Corresponding CSS class name based on the provided position.
  * @example
  *
  * positionToClassName( 'center right' );
