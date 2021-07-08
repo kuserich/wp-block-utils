@@ -39,8 +39,6 @@ describe( 'insertAtIndex', () => {
 			[ [ 'a', 'b', 'c' ], [ 'x' ], 1, [ 'a', 'x', 'c' ] ],
 			[ [ 'a', 'b', 'c' ], [ [ 'x' ] ], 1, [ 'a', [ 'x' ], 'c' ] ],
 			[ [ 'a', 'b', 'c' ], { id: 'x' }, 1, [ 'a', { id: 'x' }, 'c' ] ],
-			[ [ 'a', 'b', 'c' ], exampleValueFunction(), 1, [ 'a', 'x', 'c' ] ],
-			[ [ 'a', 'b', 'c' ], 'b', [ 1 ], [ 'a', 'b', 'c' ] ], // Array type index
 		] )( 'when given %p with value %p and index %p it returns %p', ( input, value, index, expected ) => {
 			expect( insertAtIndex( input, value, index ) ).toStrictEqual( expected );
 		} );
