@@ -19,16 +19,6 @@ import insertAtIndex from '../';
  */
 import { falsey, empties } from '../../utils';
 
-/**
- * Example function used as replacement value.
- *
- * @return {string}          Returns example string.
- * @ignore
- */
-const exampleValueFunction = () => {
-	return 'x';
-};
-
 describe( 'insertAtIndex', () => {
 	describe( 'Should return a valid array for a valid input with a valid value to insert and index', () => {
 		it.each( [
