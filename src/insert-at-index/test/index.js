@@ -52,7 +52,7 @@ describe( 'insertAtIndex', () => {
 		} );
 	} );
 
-	describe( 'Should return an invalid array for a valid input and value to insert with invalid index', () => {
+	describe( 'Should return an invalid array for a valid input and indexes that are out of bound', () => {
 		it.each( [
 			[ [ 'a', 'b', 'c' ], 'x', 5, [ 'a', 'b', 'c', 'x' ] ],
 			[ [ 'a', 'b', 'c' ], 'x', -1, [ 'a', 'b', 'x', 'a', 'b', 'c' ] ],
