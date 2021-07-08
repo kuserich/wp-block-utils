@@ -23,16 +23,13 @@ describe( 'spaceToNbsp', () => {
 	describe( 'Should return valid string with empty spaces converted to corresponsding HTML character entity "&nbsp;" given a valid input string', () => {
 		it.each( [
 			[ 'Test', 'Test' ],
+			[ ' Test', '&nbsp;Test' ],
+			[ 'Test ', 'Test&nbsp;' ],
+			[ 'Test example', 'Test&nbsp;example' ],
 			[ ' Test example ', '&nbsp;Test&nbsp;example&nbsp;' ],
-			[ [ 'Test ' ], 'Test&nbsp;' ],
 		] )( 'when given %s it returns %s', ( input, expected ) => {
 			expect( spaceToNbsp( input ) ).toBe( expected );
 		} );
-	} );
-
-	it( 'Should return stringified array items separated by a comma and empty spaces converted to corresponsding HTML character entity "&nbsp;" given an array of values', () => {
-		const testArray = [ 'Test ', 1 ];
-		expect( spaceToNbsp( testArray ) ).toBe( 'Test&nbsp;,1' );
 	} );
 
 	describe( 'Should accept falsey arguments', () => {
