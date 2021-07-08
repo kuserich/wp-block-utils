@@ -56,8 +56,6 @@ describe( 'insertAtIndex', () => {
 		it.each( [
 			[ [ 'a', 'b', 'c' ], 'x', 5, [ 'a', 'b', 'c', 'x' ] ],
 			[ [ 'a', 'b', 'c' ], 'x', -1, [ 'a', 'b', 'x', 'a', 'b', 'c' ] ],
-			[ [ 'a', 'b', 'c' ], 'x', '1', [ 'a', 'x' ] ],
-			[ [ 'a', 'b', 'c' ], 'x', '', [ 'x', 'b', 'c' ] ],
 		] )( 'when given %p with value %p and index %p it returns %p', ( input, value, index, expected ) => {
 			expect( insertAtIndex( input, value, index ) ).toStrictEqual( expected );
 		} );
