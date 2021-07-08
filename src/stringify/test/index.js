@@ -20,7 +20,7 @@ import stringify from '../';
 import { falsey, empties } from '../../utils';
 
 describe( 'stringify', () => {
-	describe( 'Should return stringified array of objects given an array of objects with a single key/value pair', () => {
+	describe( 'Should return stringified array of objects given an array of object(s)', () => {
 		it.each( [
 			[ { id: 1 }, '{"id":1}' ],
 			[ [ { id: 1, product: '1885' }, { action: 'hook_name' } ], '[{"id":1,"product":"1885"},{"action":"hook_name"}]' ],
@@ -29,10 +29,11 @@ describe( 'stringify', () => {
 		} );
 	} );
 
-	describe( 'Should return a stringified empty object given the array input includes a key/value pair with an unsupported value including but not limited to `undefined` or `Symbol()`', () => {
+	describe( 'Should remove unsupported values including but not limited to `undefined`, `Symbol()` or `function(){}` from the output object', () => {
 		it.each( [
-			[ { product: undefined }, '{}' ],
-			[ { product: Symbol() }, '{}' ],
+			[ { id: 1, product: undefined }, '{"id":1}' ],
+			[ { id: 1, product: function(){} }, '{"id":1}' ],
+			[ { id: 1, product: Symbol() }, '{"id":1}' ],
 		] )( 'when given %o it returns %s', ( input, expected ) => {
 			expect( stringify( input ) ).toBe( expected );
 		} );
