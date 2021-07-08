@@ -34,6 +34,15 @@ describe( 'insertAtIndex', () => {
 		} );
 	} );
 
+	describe( 'Should return an invalid array for a valid input and indexes that are out of bound', () => {
+		it.each( [
+			[ [ 'a', 'b', 'c' ], 'x', 5, [ 'a', 'b', 'c', 'x' ] ],
+			[ [ 'a', 'b', 'c' ], 'x', -1, [ 'a', 'b', 'x', 'a', 'b', 'c' ] ],
+		] )( 'when given %p with value %p and index %p it returns %p', ( input, value, index, expected ) => {
+			expect( insertAtIndex( input, value, index ) ).toStrictEqual( expected );
+		} );
+	} );
+
 	describe( 'Should accept falsey arguments for input array', () => {
 		const testValue = 'a';
 		const testIndex = 1;
@@ -49,15 +58,6 @@ describe( 'insertAtIndex', () => {
 		const cases = map( empties, ( value ) => [ value, testValue, testIndex ] );
 		it.each( cases )( 'when given %p with value %p and index %p', ( input, value ) => {
 			expect.anything( insertAtIndex( input, value ) );
-		} );
-	} );
-
-	describe( 'Should return an invalid array for a valid input and indexes that are out of bound', () => {
-		it.each( [
-			[ [ 'a', 'b', 'c' ], 'x', 5, [ 'a', 'b', 'c', 'x' ] ],
-			[ [ 'a', 'b', 'c' ], 'x', -1, [ 'a', 'b', 'x', 'a', 'b', 'c' ] ],
-		] )( 'when given %p with value %p and index %p it returns %p', ( input, value, index, expected ) => {
-			expect( insertAtIndex( input, value, index ) ).toStrictEqual( expected );
 		} );
 	} );
 
