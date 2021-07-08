@@ -20,7 +20,7 @@ import isNonEmptyArray from '../';
 import { falsey, empties } from '../../utils';
 
 describe( 'isNonEmptyArray', () => {
-	describe( 'Should return `true` is classified as a non-empty array object', () => {
+	describe( 'Should return `true` when given a non-empty array', () => {
 		it.each( [
 			[ [ '1', 2, true ], true ],
 			[ [ { id: 'a' } ], true ],
