@@ -22,10 +22,9 @@ import { falsey, empties } from '../../utils';
 describe( 'insertAtIndex', () => {
 	describe( 'Should return a valid array for a valid input with a valid value to insert and index', () => {
 		it.each( [
-			[ [ 'a', 'b', 'c' ], 'x', 1, [ 'a', 'x', 'c' ] ],
 			[ [ 'a', 'b', 'c' ], 'x', 0, [ 'x', 'b', 'c' ] ],
-			[ [ 'a', 'b', 'c' ], 'x', Array.length - 1, [ 'x', 'b', 'c' ] ],
-			[ [ 'a', 'b', 'c' ], 'x', Array.length, [ 'a', 'x', 'c' ] ],
+			[ [ 'a', 'b', 'c' ], 'x', 1, [ 'a', 'x', 'c' ] ],
+			[ [ 'a', 'b', 'c' ], 'x', 2, [ 'x', 'b', 'c' ] ], // Last index
 			[ [ 'a', 'b', 'c' ], [ 'x' ], 1, [ 'a', 'x', 'c' ] ],
 			[ [ 'a', 'b', 'c' ], [ [ 'x' ] ], 1, [ 'a', [ 'x' ], 'c' ] ],
 			[ [ 'a', 'b', 'c' ], { id: 'x' }, 1, [ 'a', { id: 'x' }, 'c' ] ],
