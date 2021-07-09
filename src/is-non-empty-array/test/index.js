@@ -1,34 +1,46 @@
 /**
+ * Utility for libraries from the `Lodash`.
+ *
+ * @ignore
+ */
+import { map } from 'lodash';
+
+/**
  * The function to be tested.
  *
  * @ignore
  */
 import isNonEmptyArray from '../';
 
-describe( 'Should return `true` is classified as a non-empty array object', () => {
-	it.each( [
-		[ [ '1', 2, true ], true ],
-		[ [ { id: 'a' } ], true ],
-		[ [ '' ], true ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( isNonEmptyArray( input ) ).toBe( expected );
-	} );
-} );
+/**
+ * Set of falsey and empty values for testing.
+ *
+ * @ignore
+ */
+import { falsey, empties } from '../../utils';
 
-describe( 'Should return `false` when given falsely argument including but not limited to an array, object, or an empty array', () => {
-	it.each( [
-		[ [], false ],
-		[ {}, false ],
-		[ 0, false ],
-		[ -0, false ],
-		[ 0n, false ],
-		[ NaN, false ],
-		[ 1, false ],
-		[ '', false ],
-		[ false, false ],
-		[ null, false ],
-		[ undefined, false ],
-	] )( 'when given %p it returns %p', ( input, expected ) => {
-		expect( isNonEmptyArray( input ) ).toBe( expected );
+describe( 'isNonEmptyArray', () => {
+	describe( 'Should return `true` when given a non-empty array', () => {
+		it.each( [
+			[ [ '1', 2, true ], true ],
+			[ [ { id: 'a' } ], true ],
+			[ [ '' ], true ],
+		] )( 'when given %p it returns %p', ( input, expected ) => {
+			expect( isNonEmptyArray( input ) ).toBe( expected );
+		} );
+	} );
+
+	describe( 'Should accept falsey arguments', () => {
+		const cases = map( falsey, ( value ) => [ value ] );
+		it.each( cases )( 'when given %p', ( input ) => {
+			expect.anything( isNonEmptyArray( input ) );
+		} );
+	} );
+
+	describe( 'Should accept empty arguments', () => {
+		const cases = map( empties, ( value ) => [ value ] );
+		it.each( cases )( 'when given %p', ( input ) => {
+			expect.anything( isNonEmptyArray( input ) );
+		} );
 	} );
 } );
