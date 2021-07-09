@@ -6,7 +6,7 @@
 import stringToBoolean from '../';
 
 describe( 'stringToBoolean', () => {
-	describe( "Converts a truthful input to the boolean primitive 'true'", () => {
+	describe( 'Should convert truthful values to boolean primitive "true"', () => {
 		it.each( [
 			[ 'yes', true ],
 			[ 'true', true ],
@@ -19,7 +19,7 @@ describe( 'stringToBoolean', () => {
 		} );
 	} );
 
-	describe( "Converts any other input to the boolean primitive 'false'", () => {
+	describe( 'Should convert any other input to boolean primitive "false"', () => {
 		it.each( [
 			[ '', false ],
 			[ '0', false ],
