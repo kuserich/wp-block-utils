@@ -32,10 +32,7 @@ describe( 'formattedContent', () => {
 				'<span class="amount"><bdi><span class="currency">&pound;</span>11.05</bdi></span>',
 				'<span class="amount"><bdi><span class="currency">£</span>11.05</bdi></span>',
 			],
-			[
-				'&lt;h1&gt;This post&#8217;s title.&lt;/h1&gt;',
-				'<h1>This post’s title.</h1>',
-			],
+			[ '&lt;h1&gt;This post&#8217;s title.&lt;/h1&gt;', '<h1>This post’s title.</h1>' ],
 		] )( 'when given %p it returns %p', ( input, expected ) => {
 			expect( formattedContent( input ) ).toBe( expected );
 		} );
