@@ -39,10 +39,6 @@ describe( 'isPositionCenter', () => {
 		} );
 	} );
 
-	it( 'Should return boolean primitive "false" for value "true"', () => {
-		expect( isPositionCenter( true ) ).toBe( false );
-	} );
-
 	describe( 'Should accept falsey arguments', () => {
 		const cases = map( falsey, ( value ) => [ value ] );
 		it.each( cases )( 'when given %p', ( input ) => {
