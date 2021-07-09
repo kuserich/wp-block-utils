@@ -29,10 +29,10 @@ describe( 'stringify', () => {
 		} );
 	} );
 
-	describe( 'Should remove unsupported values including but not limited to `undefined`, `Symbol()` or `function(){}` from the output object', () => {
+	describe( 'Should remove unsupported values from the output', () => {
 		it.each( [
 			[ { id: 1, product: undefined }, '{"id":1}' ],
-			[ { id: 1, function() {} }, '{"id":1}' ],
+			[ { id: 1, cb: function() {} }, '{"id":1}' ],
 			[ { id: 1, product: Symbol() }, '{"id":1}' ],
 		] )( 'when given %o it returns %s', ( input, expected ) => {
 			expect( stringify( input ) ).toBe( expected );
