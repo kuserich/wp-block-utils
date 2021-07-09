@@ -20,11 +20,12 @@ import formattedContent from '../';
 import { falsey, empties } from '../../utils';
 
 describe( 'formattedContent', () => {
-	it( 'should not change html with no entities', () => {
+	it( 'Should not change html with no entities', () => {
 		const html = '<h1>A noble tag embiggens the smallest text.</h1>';
 		const expected = '<h1>A noble tag embiggens the smallest text.</h1>';
 		expect( formattedContent( html ) ).toEqual( expected );
 	} );
+
 	describe( 'Should return decoded HTML entities from the given input', () => {
 		it.each( [
 			[
@@ -32,8 +33,8 @@ describe( 'formattedContent', () => {
 				'<span class="amount"><bdi><span class="currency">£</span>11.05</bdi></span>',
 			],
 			[
-				[ '<span class="amount"><bdi>11.05</bdi></span>', '<span class="currency">&pound;</span>' ],
-				'<span class="amount"><bdi>11.05</bdi></span>,<span class="currency">£</span>',
+				'&lt;h1&gt;This post&#8217;s title.&lt;/h1&gt;',
+				'<h1>This post’s title.</h1>',
 			],
 		] )( 'when given %p it returns %p', ( input, expected ) => {
 			expect( formattedContent( input ) ).toBe( expected );
