@@ -33,7 +33,7 @@ describe( 'deepPick', () => {
 			[ validCollection, [ 'title.label.name' ], { title: 'example' } ],
 			[ validCollection, [ 'title.rendered' ], { title: undefined } ],
 			[ validCollection, [ 'id', 'title.label.name' ], { id: 1, title: 'example' } ],
-		] )( 'when given %p with path %p it returns %p', ( collection, path, expected ) => {
+		] )( 'when given %o with path %p it returns %o', ( collection, path, expected ) => {
 			expect( deepPick( collection, path ) ).toStrictEqual( expected );
 		} );
 	} );
