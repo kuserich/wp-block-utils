@@ -41,6 +41,12 @@ describe( 'formattedContent', () => {
 		} );
 	} );
 
+	it( 'Should trim leading and trailing spaces', () => {
+		const html = ' <h1>A noble tag embiggens the smallest text.</h1> ';
+		const expected = '<h1>A noble tag embiggens the smallest text.</h1>';
+		expect( formattedContent( html ) ).toEqual( expected );
+	} );
+
 	describe( 'Should accept falsey arguments', () => {
 		const cases = map( falsey, ( value ) => [ value ] );
 		it.each( cases )( 'when given %p', ( input ) => {
