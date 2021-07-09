@@ -20,6 +20,11 @@ import formattedContent from '../';
 import { falsey, empties } from '../../utils';
 
 describe( 'formattedContent', () => {
+	it( 'should not change html with no entities', () => {
+		const html = '<h1>A noble tag embiggens the smallest text.</h1>';
+		const expected = '<h1>A noble tag embiggens the smallest text.</h1>';
+		expect( formattedContent( html ) ).toEqual( expected );
+	} );
 	describe( 'Should return decoded HTML entities from the given input', () => {
 		it.each( [
 			[
