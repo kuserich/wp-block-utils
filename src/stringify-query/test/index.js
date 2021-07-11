@@ -31,8 +31,6 @@ describe( 'stringifyQuery', () => {
 
 	describe( 'Should return an invalid string if the given array input does not include a valid array of objects with a single key/value pair', () => {
 		it.each( [
-			[ 'lorem', '0=l&0=o&0=r&0=e&0=m' ],
-			[ { product: '1885' }, '0,1,2,3=1,8,8,5' ],
 			[ [ { product: '1885', action: 'hook_name' } ], 'product,action=1885,hook_name' ],
 		] )( 'when given %o it returns %s', ( input, expected ) => {
 			expect( stringifyQuery( input ) ).toBe( expected );
