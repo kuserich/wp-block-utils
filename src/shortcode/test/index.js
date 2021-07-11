@@ -32,15 +32,6 @@ describe( 'shortcode', () => {
 		} );
 	} );
 
-	describe( 'Should return an invalid string shortcode for an invalid tag name and valid attribute', () => {
-		it.each( [
-			[ [ 'test_tag' ], { posts: 1 }, '[test_tag posts="1"]' ],
-			[ [ 'test_tag', 'another_tag' ], { posts: 1 }, '[test_tag_another_tag posts="1"]' ],
-		] )( 'when given %p with attributes %o it returns %s', ( tagName, attributes, expected ) => {
-			expect( shortcode( tagName, attributes ) ).toBe( expected );
-		} );
-	} );
-
 	describe( 'Should accept falsey arguments for the tag name', () => {
 		const testAttribute = { posts: 1 };
 		const cases = map( falsey, ( value ) => [ value, testAttribute ] );
