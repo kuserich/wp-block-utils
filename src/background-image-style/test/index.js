@@ -37,6 +37,12 @@ describe( 'backgroundImageStyle', () => {
 		} );
 	} );
 
+	it( 'Should reject URLs without an image file extension', () => {
+		const input = 'https://example.com';
+		const expected = {};
+		expect( backgroundImageStyle( input ) ).toStrictEqual( expected );
+	} );
+
 	describe( 'Should accept falsey arguments', () => {
 		const cases = map( falsey, ( value ) => [ value ] );
 		it.each( cases )( 'when given %p', ( input ) => {
