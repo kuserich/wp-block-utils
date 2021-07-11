@@ -29,7 +29,7 @@ describe( 'shortcode', () => {
 			[ 'Test Tag', { posts: 1 }, '[test_tag posts="1"]' ],
 			[ 'test_tag', { posts: [ 1, 2 ] }, '[test_tag posts="1,2"]' ],
 			[ 'test_tag', { posts: '1,2' }, '[test_tag posts="1,2"]' ],
-			[ 'test_tag', { camelCase: 1 }, '[test_tag camel_case="1"]' ],
+			[ 'test_tag', { posts: 1, categories: [ 1, 2 ] }, '[test_tag posts="1" categories="1,2"]' ],
 		] )( 'when given %s with attributes %o it returns %s', ( tagName, attributes, expected ) => {
 			expect( shortcode( tagName, attributes ) ).toBe( expected );
 		} );
