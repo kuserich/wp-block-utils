@@ -20,7 +20,7 @@ import stringify from '../';
 import { falsey, empties } from '../../utils';
 
 describe( 'stringify', () => {
-	describe( 'Should return stringified array of objects given an array of object(s)', () => {
+	describe( 'Should return a JSON string given a JavaScript object.', () => {
 		it.each( [
 			[ { id: 1 }, '{"id":1}' ],
 			[ [ { id: 1, product: '1885' }, { action: 'hook_name' } ], '[{"id":1,"product":"1885"},{"action":"hook_name"}]' ],
