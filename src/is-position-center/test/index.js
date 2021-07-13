@@ -20,7 +20,7 @@ import isPositionCenter from '../';
 import { falsey, empties } from '../../utils';
 
 describe( 'isPositionCenter', () => {
-	describe( 'Returns boolean primitive "true" for string "center" or "center center"', () => {
+	describe( 'Should return "true" when given either "center" or "center center" position values', () => {
 		it.each( [
 			[ 'center', true ],
 			[ 'center center', true ],
@@ -29,10 +29,12 @@ describe( 'isPositionCenter', () => {
 		} );
 	} );
 
-	describe( 'Should return boolean primitive "false" for invalid string', () => {
+	describe( 'Should return "false" when given position value is not assumed to be center.', () => {
 		it.each( [
-			[ 'Center', false ],
-			[ 'center  center', false ],
+			[ 'top', false ],
+			[ '25% 75%', false ],
+			[ 'left right', false ],
+			[ 'bottom 50px right 100px', false ],
 			[ 'center center center', false ],
 		] )( 'when given %p it returns %p', ( input, expected ) => {
 			expect( isPositionCenter( input ) ).toBe( expected );
