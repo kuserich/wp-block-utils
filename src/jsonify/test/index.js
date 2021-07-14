@@ -20,7 +20,7 @@ import jsonify from '../';
 import { falsey, empties } from '../../utils';
 
 describe( 'jsonify', () => {
-	describe( 'Should return valid JSON object for given input string', () => {
+	describe( 'Should return a valid JavaScript object when given a JSON string.', () => {
 		it.each( [
 			[ '[ 1, 2, 3 ]', [ 1, 2, 3 ] ],
 			[ '{ "id": 1, "title": "lorem ipsum" }', { id: 1, title: 'lorem ipsum' } ],
