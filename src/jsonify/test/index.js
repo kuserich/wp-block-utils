@@ -22,6 +22,8 @@ import { falsey, empties } from '../../utils';
 describe( 'jsonify', () => {
 	describe( 'Should return valid JSON object for given input string', () => {
 		it.each( [
+			[ '[ 1, 2, 3 ]', [ 1, 2, 3 ] ],
+			[ '{ "id": 1, "title": "lorem ipsum" }', { id: 1, title: 'lorem ipsum' } ],
 			[
 				'[{"id":1,"title":"sunt aut facere"},{"id":2,"title":"qui est esse"}]',
 				[
@@ -29,6 +31,7 @@ describe( 'jsonify', () => {
 					{ id: 2, title: 'qui est esse' },
 				],
 			],
+			[ '{ "values": [ "a", "b", "c" ] }', { values: [ 'a', 'b', 'c' ] } ],
 		] )( 'when given %s it returns %o', ( input, expected ) => {
 			expect( jsonify( input ) ).toStrictEqual( expected );
 		} );
