@@ -30,11 +30,12 @@ describe( 'stringifyQuery', () => {
 	} );
 
 	describe( 'Should return an invalid string if the given array input does not include a valid array of objects with a single key/value pair', () => {
-		it.each( [
-			[ [ { product: '1885', action: 'hook_name' } ], 'product,action=1885,hook_name' ],
-		] )( 'when given %o it returns %s', ( input, expected ) => {
-			expect( stringifyQuery( input ) ).toBe( expected );
-		} );
+		it.each( [ [ [ { product: '1885', action: 'hook_name' } ], 'product,action=1885,hook_name' ] ] )(
+			'when given %o it returns %s',
+			( input, expected ) => {
+				expect( stringifyQuery( input ) ).toBe( expected );
+			}
+		);
 	} );
 
 	describe( 'Should accept falsey arguments', () => {
