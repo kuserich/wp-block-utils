@@ -57,7 +57,7 @@
 	},
 	"dependencies": {
 		"rename-keys": "^2.0.1",
-		"slugify": "^1.5.3",
+		"slugify": "^1.6.0",
 		"striptags": "^3.2.0"
 	},
 	"devDependencies": {
