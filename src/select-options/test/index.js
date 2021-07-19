@@ -98,29 +98,29 @@ describe( 'selectOptions', () => {
 
 	describe( 'Should accept falsey arguments for post objects array', () => {
 		const cases = map( falsey, ( value ) => [ value, testPropertyPath ] );
-		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
-			expect.anything( selectOptions( input, value ) );
+		it.each( cases )( 'when given %p with path %o', ( post, path ) => {
+			expect.anything( selectOptions( post, path ) );
 		} );
 	} );
 
 	describe( 'Should accept empty arguments for post objects array', () => {
 		const cases = map( empties, ( value ) => [ value, testPropertyPath ] );
-		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
-			expect.anything( selectOptions( input, value ) );
+		it.each( cases )( 'when given %p with path %o', ( post, path ) => {
+			expect.anything( selectOptions( post, path ) );
 		} );
 	} );
 
 	describe( 'Should accept falsey arguments for value path', () => {
 		const cases = map( falsey, ( value ) => [ testPostObject, value ] );
-		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
-			expect.anything( selectOptions( input, value ) );
+		it.each( cases )( 'when given %p with path %o', ( post, path ) => {
+			expect.anything( selectOptions( post, path ) );
 		} );
 	} );
 
 	describe( 'Should accept empty arguments for value path', () => {
 		const cases = map( empties, ( value ) => [ testPostObject, value ] );
-		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
-			expect.anything( selectOptions( input, value ) );
+		it.each( cases )( 'when given %p with path %o', ( post, path ) => {
+			expect.anything( selectOptions( post, path ) );
 		} );
 	} );
 
