@@ -19,6 +19,9 @@ import selectOptions from '../';
  */
 import { falsey, empties } from '../../utils';
 
+const testPropertyPath = { id: 'value' };
+const testPostObject = { id: 1 };
+
 describe( 'selectOptions', () => {
 	describe( 'Should return array of objects for valid post objects array with valid property path and no custom "none" option value', () => {
 		it.each( [
@@ -94,7 +97,6 @@ describe( 'selectOptions', () => {
 	} );
 
 	describe( 'Should accept falsey arguments for post objects array', () => {
-		const testPropertyPath = { id: 'value' };
 		const cases = map( falsey, ( value ) => [ value, testPropertyPath ] );
 		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
 			expect.anything( selectOptions( input, value ) );
@@ -102,7 +104,6 @@ describe( 'selectOptions', () => {
 	} );
 
 	describe( 'Should accept empty arguments for post objects array', () => {
-		const testPropertyPath = { id: 'value' };
 		const cases = map( empties, ( value ) => [ value, testPropertyPath ] );
 		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
 			expect.anything( selectOptions( input, value ) );
@@ -110,7 +111,6 @@ describe( 'selectOptions', () => {
 	} );
 
 	describe( 'Should accept falsey arguments for value path', () => {
-		const testPostObject = { id: 1 };
 		const cases = map( falsey, ( value ) => [ testPostObject, value ] );
 		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
 			expect.anything( selectOptions( input, value ) );
@@ -118,10 +118,23 @@ describe( 'selectOptions', () => {
 	} );
 
 	describe( 'Should accept empty arguments for value path', () => {
-		const testPostObject = { id: 1 };
 		const cases = map( empties, ( value ) => [ testPostObject, value ] );
 		it.each( cases )( 'when given %p with path %o', ( input, value ) => {
 			expect.anything( selectOptions( input, value ) );
+		} );
+	} );
+
+	describe( 'Should accept falsey arguments for none object', () => {
+		const cases = map( falsey, ( value ) => [ testPostObject, testPropertyPath, value ] );
+		it.each( cases )( 'when given %p with path %o', ( post, path, none ) => {
+			expect.anything( selectOptions( post, path, none ) );
+		} );
+	} );
+
+	describe( 'Should accept empty arguments for none object', () => {
+		const cases = map( empties, ( value ) => [ testPostObject, testPropertyPath, value ] );
+		it.each( cases )( 'when given %p with path %o', ( post, path, none ) => {
+			expect.anything( selectOptions( post, path, none ) );
 		} );
 	} );
 } );
