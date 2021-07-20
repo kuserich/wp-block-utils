@@ -23,9 +23,9 @@ import positions from './positions';
  * Generates content-position CSS class name based on provided value.
  *
  * @function
- * @since     1.0.0
- * @param  	  {string}    value    CSS position value.
- * @return 	  {string}             Corresponding CSS class name based on the provided position.
+ * @since      1.0.0
+ * @param  	   {string}    value    CSS position value.
+ * @return 	   {string}             Corresponding CSS class name based on the provided position.
  * @example
  *
  * positionToClassName( 'center right' );

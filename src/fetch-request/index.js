@@ -19,10 +19,10 @@ import { addQueryArgs } from '@wordpress/url';
  * Utility to make WordPress REST API requests. It's a wrapper around `window.fetch`.
  *
  * @function
- * @since     1.0.0
- * @param  	  {string}    endpoint    The endpoint that is being appended to the REST API root URL for the current site.
- * @param  	  {Object}    args        Request arguments.
- * @return 	  {Promise}               The object that represents the eventual completion (or failure) of an asynchronous operation.
+ * @since      1.0.0
+ * @param  	   {string}     endpoint    The endpoint that is being appended to the REST API root URL for the current site.
+ * @param  	   {Object}     args        Request arguments.
+ * @return 	   {Promise}                The object that represents the eventual completion (or failure) of an asynchronous operation.
  * @example
  *
  * fetchRequest( 'https://wptest.io/demo/wp-json/wp/v2/posts' ).then( ( data ) => console.log( data ) );

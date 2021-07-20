@@ -9,10 +9,10 @@ import { forEach, split, get, set, first } from 'lodash';
  * Creates an object composed of the (nested) picked object properties.
  *
  * @function
- * @since     1.0.0
- * @param  	  {Object}    collection    The source object.
- * @param  	  {Array}     paths         The property paths to pick.
- * @return    {Object}                  Returns the new object.
+ * @since      1.0.0
+ * @param  	   {Object}    collection    The source object.
+ * @param  	   {Array}     paths         The property paths to pick.
+ * @return     {Object}                  Returns the new object.
  * @example
  *
  * deepPick( { id: 1, title: { rendered: 'Hello world!' } }, [ 'title.rendered' ] );
