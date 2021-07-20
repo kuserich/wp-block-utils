@@ -19,9 +19,9 @@ import striptags from 'striptags';
  * Properly strips all HTML tags including script and style.
  *
  * @function
- * @since     1.0.0
- * @param  	  {string}    input    The value to slugify.
- * @return 	  {string}             Converted value to slug.
+ * @since      1.0.0
+ * @param  	   {string}    input    The value to slugify.
+ * @return 	   {string}             Converted value to slug.
  * @example
  *
  * slugify( 'unicode is ♥' );

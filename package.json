@@ -1,6 +1,6 @@
 {
 	"name": "@sixach/wp-block-utils",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A collection of JavaScript utility methods delivering modularity, performance & extras.",
 	"keywords": [
 		"gutenberg",

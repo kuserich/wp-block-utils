@@ -10,9 +10,9 @@ import { get, round, multiply } from 'lodash';
  * Example focal point picker value: `{ x: 0.5, y: 0.1 }` Corresponding CSS: `background-position: 50% 10%`;
  *
  * @function
- * @since     1.0.0
- * @param  	  {Object}    value    Focal point object value.
- * @return 	  {string}             Calculated X and Y position based on the focalpoint object provided.
+ * @since      1.0.0
+ * @param  	   {Object}    value    Focal point object value.
+ * @return 	   {string}             Calculated X and Y position based on the focalpoint object provided.
  * @example
  *
  * focalPointStyle( { x: 0.67, y: 0.65 } );
