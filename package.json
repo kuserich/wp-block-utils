@@ -1,6 +1,6 @@
 {
-	"name": "@sixach/wp-block-utils",
-	"version": "1.0.2",
+	"name": "@sixa/wp-block-utils",
+	"version": "1.0.3",
 	"description": "A collection of JavaScript utility methods delivering modularity, performance & extras.",
 	"keywords": [
 		"gutenberg",
@@ -73,6 +73,6 @@
 		"npm": ">=7.0"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"access": "public"
 	}
 }
