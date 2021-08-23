@@ -30,7 +30,7 @@
 		"lint:js-fix": "wp-scripts lint-js --fix",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
-		"prepublishOnly": "npm run format && npm run build && npm run docs",
+		"prepublishOnly": "npm run build",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js",
 		"test:unit:help": "wp-scripts test-unit-js --help",
