@@ -1,6 +1,6 @@
 {
-	"name": "@sixach/wp-block-utils",
-	"version": "1.0.2",
+	"name": "@sixa/wp-block-utils",
+	"version": "1.0.3",
 	"description": "A collection of JavaScript utility methods delivering modularity, performance & extras.",
 	"keywords": [
 		"gutenberg",
@@ -30,18 +30,14 @@
 		"lint:js-fix": "wp-scripts lint-js --fix",
 		"lint:pkg-json": "wp-scripts lint-pkg-json",
 		"packages-update": "wp-scripts packages-update",
-		"prepublishOnly": "npm run format && npm run build && npm run docs",
+		"prepublishOnly": "npm run build",
 		"test:e2e": "wp-scripts test-e2e",
 		"test:unit": "wp-scripts test-unit-js",
 		"test:unit:help": "wp-scripts test-unit-js --help",
 		"test:unit:watch": "wp-scripts test-unit-js --watch",
 		"test:unit:debug": "wp-scripts --inspect-brk test-unit-js --runInBand --no-cache",
-		"docs": "documentation build src/** -f html --github -o docs"
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
+		"docs": "documentation build src/** -f html --github -o docs",
+		"prepare": "husky install"
 	},
 	"lint-staged": {
 		"*.{js,ts,tsx}": [
@@ -56,14 +52,14 @@
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.14.8",
-		"@babel/core": "^7.14.8",
-		"@babel/preset-env": "^7.14.8",
+		"@babel/core": "^7.15.0",
+		"@babel/preset-env": "^7.15.0",
 		"@babel/preset-react": "7.14.5",
 		"@wordpress/scripts": "^17.1.0",
 		"classnames": "2.3.1",
 		"cross-env": "7.0.3",
 		"husky": "^7.0.1",
-		"lint-staged": "^11.1.1",
+		"lint-staged": "^11.1.2",
 		"lodash": "4.17.21"
 	},
 	"peerDependencies": {
@@ -77,6 +73,6 @@
 		"npm": ">=7.0"
 	},
 	"publishConfig": {
-		"registry": "https://npm.pkg.github.com/"
+		"access": "public"
 	}
 }
