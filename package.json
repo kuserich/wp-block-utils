@@ -48,7 +48,9 @@
 	"dependencies": {
 		"rename-keys": "^2.0.1",
 		"slugify": "^1.6.0",
-		"striptags": "^3.2.0"
+		"striptags": "^3.2.0",
+		"lodash": "4.17.21",
+		"classnames": "2.3.1"
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.14.8",
@@ -56,11 +58,9 @@
 		"@babel/preset-env": "^7.15.0",
 		"@babel/preset-react": "7.14.5",
 		"@wordpress/scripts": "^17.1.0",
-		"classnames": "2.3.1",
 		"cross-env": "7.0.3",
 		"husky": "^7.0.1",
-		"lint-staged": "^11.1.2",
-		"lodash": "4.17.21"
+		"lint-staged": "^11.1.2"
 	},
 	"peerDependencies": {
 		"@wordpress/api-fetch": "5.x",
