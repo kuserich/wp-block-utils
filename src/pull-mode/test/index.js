@@ -41,6 +41,15 @@ describe( 'pullMode', () => {
 		expect( pullMode( input ) ).toBe( expected );
 	} );
 
+	describe( 'Should work for integers', () => {
+		it.each( [
+			[ [ 0, 1, 1 ], 1 ],
+			[ [ -1, -1, 0 ], -1 ],
+		] )( 'when given %s it returns %s', ( input, expected ) => {
+			expect( pullMode( input ) ).toBe( expected );
+		} );
+	} );
+
 	describe( 'Should accept empty arguments', () => {
 		const cases = map( empties, ( value ) => [ value ] );
 		it.each( cases )( 'when given %p', ( input ) => {
