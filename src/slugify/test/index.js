@@ -69,11 +69,4 @@ describe( 'slugify', () => {
 			expect.anything( slugify( input ) );
 		} );
 	} );
-
-	describe( 'Should accept empty arguments', () => {
-		const cases = map( empties, ( value ) => [ value ] );
-		it.each( cases )( 'when given %p', ( input ) => {
-			expect.anything( slugify( input ) );
-		} );
-	} );
 } );
