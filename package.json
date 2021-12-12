@@ -32,10 +32,9 @@
 		"packages-update": "wp-scripts packages-update",
 		"prepublishOnly": "npm run build",
 		"test:e2e": "wp-scripts test-e2e",
-		"test:unit": "cross-env jest",
-		"test:unit:help": "wp-scripts test-unit-js --help",
-		"test:unit:watch": "wp-scripts test-unit-js --watch",
-		"test:unit:debug": "wp-scripts --inspect-brk test-unit-js --runInBand --no-cache",
+		"test:unit": "cross-env BABEL_ENV=test NODE_ENV=test jest",
+		"test:unit:help": "cross-env BABEL_ENV=test NODE_ENV=test jest --help",
+		"test:unit:watch": "cross-env BABEL_ENV=test NODE_ENV=test jest --watch",
 		"docs": "documentation build src/** -f html --github -o docs",
 		"prepare": "husky install"
 	},
