@@ -32,7 +32,7 @@
 		"packages-update": "wp-scripts packages-update",
 		"prepublishOnly": "npm run build",
 		"test:e2e": "wp-scripts test-e2e",
-		"test:unit": "wp-scripts test-unit-js",
+		"test:unit": "cross-env jest",
 		"test:unit:help": "wp-scripts test-unit-js --help",
 		"test:unit:watch": "wp-scripts test-unit-js --watch",
 		"test:unit:debug": "wp-scripts --inspect-brk test-unit-js --runInBand --no-cache",
@@ -55,6 +55,7 @@
 	"devDependencies": {
 		"@babel/cli": "^7.14.8",
 		"@babel/core": "^7.15.0",
+		"@babel/plugin-transform-modules-commonjs": "^7.16.0",
 		"@babel/preset-env": "^7.15.0",
 		"@babel/preset-react": "7.14.5",
 		"@wordpress/scripts": "^17.1.0",
