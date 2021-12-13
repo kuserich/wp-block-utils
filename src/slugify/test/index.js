@@ -17,7 +17,7 @@ import slugify from '../';
  *
  * @ignore
  */
-import { falsey, empties } from '../../utils';
+import { falsey } from '../../utils';
 
 describe( 'slugify', () => {
 	it( 'Should replace whitespaces between words with dashes', () => {
