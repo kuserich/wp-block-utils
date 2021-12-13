@@ -72,3 +72,9 @@ package-lock.json
 
 # Source files
 src/
+
+# ESLint configuration files
+.eslintrc.js
+
+# GitHub configuration files
+.github/
