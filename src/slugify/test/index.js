@@ -17,7 +17,7 @@ import slugify from '../';
  *
  * @ignore
  */
-import { falsey, empties } from '../../utils';
+import { falsey } from '../../utils';
 
 describe( 'slugify', () => {
 	it( 'Should replace whitespaces between words with dashes', () => {
@@ -65,13 +65,6 @@ describe( 'slugify', () => {
 
 	describe( 'Should accept falsey arguments', () => {
 		const cases = map( falsey, ( value ) => [ value ] );
-		it.each( cases )( 'when given %p', ( input ) => {
-			expect.anything( slugify( input ) );
-		} );
-	} );
-
-	describe( 'Should accept empty arguments', () => {
-		const cases = map( empties, ( value ) => [ value ] );
 		it.each( cases )( 'when given %p', ( input ) => {
 			expect.anything( slugify( input ) );
 		} );

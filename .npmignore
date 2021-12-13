@@ -78,3 +78,7 @@ src/
 
 # GitHub configuration files
 .github/
+
+# Test and Test Utils Files
+build/*/test/
+build/utils/
