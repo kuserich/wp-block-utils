@@ -41,10 +41,10 @@ describe( 'pullMode', () => {
 		expect( pullMode( input ) ).toBe( expected );
 	} );
 
-	describe( 'Should return the first item that reached the highest frequency if multiple items have the same frequency', () => {
+	describe( 'Should return the last item that reached the highest frequency if multiple items have the same frequency', () => {
 		it.each( [
-			[ [ 'a', 'a', 'b', 'b', 'c', 'c' ], 'a' ],
-			[ [ 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'a' ], 'b' ],
+			[ [ 'a', 'a', 'b', 'b', 'c', 'c' ], 'c' ],
+			[ [ 'a', 'a', 'b', 'b', 'b', 'c', 'c', 'c', 'a' ], 'a' ],
 		] )( 'when given %s it returns %s', ( input, expected ) => {
 			expect( pullMode( input ) ).toBe( expected );
 		} );
