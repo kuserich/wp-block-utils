@@ -73,6 +73,12 @@ package-lock.json
 # Source files
 src/
 
+# ESLint configuration files
+.eslintrc.js
+
+# GitHub configuration files
+.github/
+
 # Test and Test Utils Files
 build/*/test/
 build/utils/
