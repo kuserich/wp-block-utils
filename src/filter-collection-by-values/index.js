@@ -10,6 +10,10 @@ import { forEach, find } from 'lodash';
  * Iterates over elements of `values` and returns the matching entry
  * from ´collection´, if there is a match.
  *
+ * Notice that this function preserves the order of `values` in the result set
+ * and is thus most useful if a collection must be filtered in an order that is
+ * specified by another collection.
+ *
  * @function
  * @since     1.2.0
  * @param     {Array}     values        The values to search for.
