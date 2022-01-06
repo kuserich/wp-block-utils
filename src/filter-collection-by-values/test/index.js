@@ -55,14 +55,15 @@ describe( 'filterCollectionByValues', () => {
 		expect( actual ).toEqual( expected );
 	} );
 
-	it( 'Should accept different fields', () => {
+	it( 'Should accept different predicate functions', () => {
 		const values = [ 'example-1', 'example-2', 'example-3' ];
+		const predicate = ( value ) => [ 'title', value ];
 		const expected = [
 			{ id: 1, title: 'example-1' },
 			{ id: 2, title: 'example-2' },
 			{ id: 3, title: 'example-3' },
 		];
-		const actual = filterCollectionByValues( values, testCollection, 'title' );
+		const actual = filterCollectionByValues( values, testCollection, predicate );
 		expect( actual ).toEqual( expected );
 	} );
 
