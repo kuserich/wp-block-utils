@@ -5,6 +5,7 @@ export { default as booleanToString } from './boolean-to-string';
 export { default as deepPick } from './deep-pick';
 export { default as dimRatioClassName } from './dim-ratio-class-name';
 export { default as fetchRequest } from './fetch-request';
+export { default as filterCollectionByValues } from './filter-collection-by-values';
 export { default as focalPointStyle } from './focal-point-style';
 export { default as formattedContent } from './formatted-content';
 export { default as getMailTo } from './get-mailto';
