@@ -56,10 +56,10 @@
 		"striptags": "3.2.0"
 	},
 	"devDependencies": {
-		"@babel/cli": "7.16.7",
+		"@babel/cli": "7.16.8",
 		"@babel/core": "7.16.7",
-		"@babel/plugin-transform-modules-commonjs": "7.16.7",
-		"@babel/preset-env": "7.16.7",
+		"@babel/plugin-transform-modules-commonjs": "7.16.8",
+		"@babel/preset-env": "7.16.8",
 		"@babel/preset-react": "7.16.7",
 		"@wordpress/scripts": "19.2.2",
 		"cross-env": "7.0.3",
